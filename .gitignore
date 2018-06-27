@@ -14,3 +14,4 @@ cobOpus/DataBase/Bkp/cobOpus.Dados.csComodos.txt
 cobOpus/DataBase/Bkp/cobOpus.Dados.csAtividadesComodos.txt
 cobOpus/obj/Debug/cobOpus.exe
 cobOpus/obj/Debug/cobOpus.pdb
+*.txt

@@ -64,6 +64,9 @@ namespace cobOpus.Classes
         {
             DirectoryInfo diretorio = new DirectoryInfo(sCaminho);
 
+            sCaminhoBkp = sCaminhoBkp.Replace("Bkp", "Bkp_" + 
+                DateTime.Now.ToString().Substring(0, 16).Replace("/", "-").Replace(" ", "_").Replace(":", "-"));
+
             if (!Directory.Exists(sCaminho))
             {
                 Directory.CreateDirectory(sCaminho);
