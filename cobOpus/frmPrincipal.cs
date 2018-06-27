@@ -32,6 +32,7 @@ namespace cobOpus
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             CarregarRelacionamentos();
+            tstbBaseDados.Text = csFuncoes.sCaminho;
         }
 
         private void CarregarRelacionamentos()
