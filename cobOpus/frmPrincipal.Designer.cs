@@ -31,16 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tcPrincipal = new System.Windows.Forms.TabControl();
             this.tpControle = new System.Windows.Forms.TabPage();
             this.scControle = new System.Windows.Forms.SplitContainer();
@@ -51,9 +52,19 @@
             this.nmComodoCon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scControleSub = new System.Windows.Forms.SplitContainer();
             this.dgvConAtividades = new System.Windows.Forms.DataGridView();
+            this.cdComodoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdAtividadeComodo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vlAtividadeComodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ssTotalizador = new System.Windows.Forms.StatusStrip();
             this.tsslTotalAtividade = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvProdutosAtividades = new System.Windows.Forms.DataGridView();
+            this.cdComodoAtividadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdAtividadeProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nmProdutoAtividade = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vlProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deConUnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nuQtdProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpCadastros = new System.Windows.Forms.TabPage();
             this.scCadastros = new System.Windows.Forms.SplitContainer();
             this.scSuperior = new System.Windows.Forms.SplitContainer();
@@ -89,16 +100,6 @@
             this.bsConComodos = new System.Windows.Forms.BindingSource(this.components);
             this.bsConAtividadesComodo = new System.Windows.Forms.BindingSource(this.components);
             this.bsConProdutosAtividade = new System.Windows.Forms.BindingSource(this.components);
-            this.cdComodoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdAtividadeComodo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.vlAtividadeComodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdComodoAtividadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdAtividadeProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nmProdutoAtividade = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.vlProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deConUnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nuQtdProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vlTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPrincipal.SuspendLayout();
             this.tpControle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scControle)).BeginInit();
@@ -270,6 +271,33 @@
             this.dgvConAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvConAtividades_EditingControlShowing);
             this.dgvConAtividades.SelectionChanged += new System.EventHandler(this.dgvConAtividades_SelectionChanged);
             // 
+            // cdComodoAtividade
+            // 
+            this.cdComodoAtividade.DataPropertyName = "cdComodo";
+            this.cdComodoAtividade.HeaderText = "Cód. Cômodo";
+            this.cdComodoAtividade.Name = "cdComodoAtividade";
+            this.cdComodoAtividade.Visible = false;
+            this.cdComodoAtividade.Width = 80;
+            // 
+            // cdAtividadeComodo
+            // 
+            this.cdAtividadeComodo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cdAtividadeComodo.DataPropertyName = "cdAtividade";
+            this.cdAtividadeComodo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.cdAtividadeComodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cdAtividadeComodo.HeaderText = "Atividade";
+            this.cdAtividadeComodo.Name = "cdAtividadeComodo";
+            // 
+            // vlAtividadeComodo
+            // 
+            this.vlAtividadeComodo.DataPropertyName = "vlAtividade";
+            dataGridViewCellStyle3.Format = "C2";
+            this.vlAtividadeComodo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vlAtividadeComodo.HeaderText = "Valor";
+            this.vlAtividadeComodo.Name = "vlAtividadeComodo";
+            this.vlAtividadeComodo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.vlAtividadeComodo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // ssTotalizador
             // 
             this.ssTotalizador.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -307,6 +335,63 @@
             this.dgvProdutosAtividades.TabIndex = 0;
             this.dgvProdutosAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvProdutosAtividades_EditingControlShowing);
             this.dgvProdutosAtividades.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutosAtividades_RowValidated);
+            // 
+            // cdComodoAtividadeProduto
+            // 
+            this.cdComodoAtividadeProduto.DataPropertyName = "cdComodo";
+            this.cdComodoAtividadeProduto.HeaderText = "Cód. Cômodo";
+            this.cdComodoAtividadeProduto.Name = "cdComodoAtividadeProduto";
+            this.cdComodoAtividadeProduto.Visible = false;
+            // 
+            // cdAtividadeProd
+            // 
+            this.cdAtividadeProd.DataPropertyName = "cdAtividade";
+            this.cdAtividadeProd.HeaderText = "Cód. Atividade";
+            this.cdAtividadeProd.Name = "cdAtividadeProd";
+            this.cdAtividadeProd.Visible = false;
+            // 
+            // nmProdutoAtividade
+            // 
+            this.nmProdutoAtividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nmProdutoAtividade.DataPropertyName = "cdProduto";
+            this.nmProdutoAtividade.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.nmProdutoAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.nmProdutoAtividade.HeaderText = "Produto";
+            this.nmProdutoAtividade.Name = "nmProdutoAtividade";
+            // 
+            // vlProdutoAtividade
+            // 
+            this.vlProdutoAtividade.DataPropertyName = "vlProduto";
+            dataGridViewCellStyle5.Format = "C2";
+            this.vlProdutoAtividade.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vlProdutoAtividade.HeaderText = "Valor";
+            this.vlProdutoAtividade.Name = "vlProdutoAtividade";
+            this.vlProdutoAtividade.Width = 80;
+            // 
+            // deConUnidadeMedida
+            // 
+            this.deConUnidadeMedida.DataPropertyName = "deUnidadeMedida";
+            this.deConUnidadeMedida.HeaderText = "Und. Medida";
+            this.deConUnidadeMedida.Name = "deConUnidadeMedida";
+            this.deConUnidadeMedida.ReadOnly = true;
+            this.deConUnidadeMedida.Width = 50;
+            // 
+            // nuQtdProdutoAtividade
+            // 
+            this.nuQtdProdutoAtividade.DataPropertyName = "nuQtdProduto";
+            this.nuQtdProdutoAtividade.HeaderText = "Qtd.";
+            this.nuQtdProdutoAtividade.Name = "nuQtdProdutoAtividade";
+            this.nuQtdProdutoAtividade.Width = 60;
+            // 
+            // vlTotal
+            // 
+            this.vlTotal.DataPropertyName = "vlTotal";
+            dataGridViewCellStyle6.Format = "C2";
+            this.vlTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.vlTotal.HeaderText = "Total";
+            this.vlTotal.Name = "vlTotal";
+            this.vlTotal.ReadOnly = true;
+            this.vlTotal.Width = 80;
             // 
             // tpCadastros
             // 
@@ -656,90 +741,6 @@
             // 
             this.bsConProdutosAtividade.DataMember = "ProdutosAtividadesComodo";
             // 
-            // cdComodoAtividade
-            // 
-            this.cdComodoAtividade.DataPropertyName = "cdComodo";
-            this.cdComodoAtividade.HeaderText = "Cód. Cômodo";
-            this.cdComodoAtividade.Name = "cdComodoAtividade";
-            this.cdComodoAtividade.Visible = false;
-            this.cdComodoAtividade.Width = 80;
-            // 
-            // cdAtividadeComodo
-            // 
-            this.cdAtividadeComodo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cdAtividadeComodo.DataPropertyName = "cdAtividade";
-            this.cdAtividadeComodo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.cdAtividadeComodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cdAtividadeComodo.HeaderText = "Atividade";
-            this.cdAtividadeComodo.Name = "cdAtividadeComodo";
-            // 
-            // vlAtividadeComodo
-            // 
-            this.vlAtividadeComodo.DataPropertyName = "vlAtividade";
-            dataGridViewCellStyle3.Format = "C2";
-            this.vlAtividadeComodo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.vlAtividadeComodo.HeaderText = "Valor";
-            this.vlAtividadeComodo.Name = "vlAtividadeComodo";
-            this.vlAtividadeComodo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.vlAtividadeComodo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // cdComodoAtividadeProduto
-            // 
-            this.cdComodoAtividadeProduto.DataPropertyName = "cdComodo";
-            this.cdComodoAtividadeProduto.HeaderText = "Cód. Cômodo";
-            this.cdComodoAtividadeProduto.Name = "cdComodoAtividadeProduto";
-            this.cdComodoAtividadeProduto.Visible = false;
-            // 
-            // cdAtividadeProd
-            // 
-            this.cdAtividadeProd.DataPropertyName = "cdAtividade";
-            this.cdAtividadeProd.HeaderText = "Cód. Atividade";
-            this.cdAtividadeProd.Name = "cdAtividadeProd";
-            this.cdAtividadeProd.Visible = false;
-            // 
-            // nmProdutoAtividade
-            // 
-            this.nmProdutoAtividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nmProdutoAtividade.DataPropertyName = "cdProduto";
-            this.nmProdutoAtividade.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.nmProdutoAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.nmProdutoAtividade.HeaderText = "Produto";
-            this.nmProdutoAtividade.Name = "nmProdutoAtividade";
-            // 
-            // vlProdutoAtividade
-            // 
-            this.vlProdutoAtividade.DataPropertyName = "vlProduto";
-            dataGridViewCellStyle5.Format = "C2";
-            this.vlProdutoAtividade.DefaultCellStyle = dataGridViewCellStyle5;
-            this.vlProdutoAtividade.HeaderText = "Valor";
-            this.vlProdutoAtividade.Name = "vlProdutoAtividade";
-            this.vlProdutoAtividade.Width = 80;
-            // 
-            // deConUnidadeMedida
-            // 
-            this.deConUnidadeMedida.DataPropertyName = "deUnidadeMedida";
-            this.deConUnidadeMedida.HeaderText = "Und. Medida";
-            this.deConUnidadeMedida.Name = "deConUnidadeMedida";
-            this.deConUnidadeMedida.ReadOnly = true;
-            this.deConUnidadeMedida.Width = 50;
-            // 
-            // nuQtdProdutoAtividade
-            // 
-            this.nuQtdProdutoAtividade.DataPropertyName = "nuQtdProduto";
-            this.nuQtdProdutoAtividade.HeaderText = "Qtd.";
-            this.nuQtdProdutoAtividade.Name = "nuQtdProdutoAtividade";
-            this.nuQtdProdutoAtividade.Width = 60;
-            // 
-            // vlTotal
-            // 
-            this.vlTotal.DataPropertyName = "vlTotal";
-            dataGridViewCellStyle6.Format = "C2";
-            this.vlTotal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.vlTotal.HeaderText = "Total";
-            this.vlTotal.Name = "vlTotal";
-            this.vlTotal.ReadOnly = true;
-            this.vlTotal.Width = 80;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,6 +748,7 @@
             this.ClientSize = new System.Drawing.Size(887, 410);
             this.Controls.Add(this.tcPrincipal);
             this.Controls.Add(this.msControle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Opus 1.0";
