@@ -1,0 +1,10 @@
+C:\emersonkurauti\cobOpus\cobOpus\bin\Release\cobOpus.exe.config
+C:\emersonkurauti\cobOpus\cobOpus\bin\Release\cobOpus.exe
+C:\emersonkurauti\cobOpus\cobOpus\bin\Release\cobOpus.pdb
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.csprojAssemblyReference.cache
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.frmPrincipal.resources
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.Properties.Resources.resources
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.csproj.GenerateResource.cache
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.csproj.CoreCompileInputs.cache
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.exe
+C:\emersonkurauti\cobOpus\cobOpus\obj\Release\cobOpus.pdb
