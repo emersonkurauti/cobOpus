@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcPrincipal = new System.Windows.Forms.TabControl();
             this.tpControle = new System.Windows.Forms.TabPage();
             this.scControle = new System.Windows.Forms.SplitContainer();
@@ -51,19 +51,9 @@
             this.nmComodoCon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scControleSub = new System.Windows.Forms.SplitContainer();
             this.dgvConAtividades = new System.Windows.Forms.DataGridView();
-            this.cdComodoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdAtividadeComodo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.vlAtividadeComodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ssTotalizador = new System.Windows.Forms.StatusStrip();
             this.tsslTotalAtividade = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvProdutosAtividades = new System.Windows.Forms.DataGridView();
-            this.cdComodoAtividadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdAtividadeProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nmProdutoAtividade = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.vlProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deConUnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nuQtdProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vlTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpCadastros = new System.Windows.Forms.TabPage();
             this.scCadastros = new System.Windows.Forms.SplitContainer();
             this.scSuperior = new System.Windows.Forms.SplitContainer();
@@ -88,6 +78,7 @@
             this.tsmiFechar = new System.Windows.Forms.ToolStripMenuItem();
             this.tstbStatus = new System.Windows.Forms.ToolStripTextBox();
             this.tstbTotalObra = new System.Windows.Forms.ToolStripTextBox();
+            this.tstbBaseDados = new System.Windows.Forms.ToolStripTextBox();
             this.bsAtividades = new System.Windows.Forms.BindingSource(this.components);
             this.bsProdutosSugeridos = new System.Windows.Forms.BindingSource(this.components);
             this.dsPrincipal = new System.Data.DataSet();
@@ -98,7 +89,16 @@
             this.bsConComodos = new System.Windows.Forms.BindingSource(this.components);
             this.bsConAtividadesComodo = new System.Windows.Forms.BindingSource(this.components);
             this.bsConProdutosAtividade = new System.Windows.Forms.BindingSource(this.components);
-            this.tstbBaseDados = new System.Windows.Forms.ToolStripTextBox();
+            this.cdComodoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdAtividadeComodo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vlAtividadeComodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdComodoAtividadeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdAtividadeProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nmProdutoAtividade = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vlProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deConUnidadeMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nuQtdProdutoAtividade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPrincipal.SuspendLayout();
             this.tpControle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scControle)).BeginInit();
@@ -202,8 +202,8 @@
             // 
             this.dgvConComodos.AllowUserToAddRows = false;
             this.dgvConComodos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvConComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvConComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConComodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConComodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodoCon,
@@ -254,8 +254,8 @@
             // 
             // dgvConAtividades
             // 
-            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvConAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvConAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConAtividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConAtividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodoAtividade,
@@ -269,33 +269,6 @@
             this.dgvConAtividades.TabIndex = 0;
             this.dgvConAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvConAtividades_EditingControlShowing);
             this.dgvConAtividades.SelectionChanged += new System.EventHandler(this.dgvConAtividades_SelectionChanged);
-            // 
-            // cdComodoAtividade
-            // 
-            this.cdComodoAtividade.DataPropertyName = "cdComodo";
-            this.cdComodoAtividade.HeaderText = "Cód. Cômodo";
-            this.cdComodoAtividade.Name = "cdComodoAtividade";
-            this.cdComodoAtividade.Visible = false;
-            // 
-            // cdAtividadeComodo
-            // 
-            this.cdAtividadeComodo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cdAtividadeComodo.DataPropertyName = "cdAtividade";
-            this.cdAtividadeComodo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.cdAtividadeComodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cdAtividadeComodo.HeaderText = "Atividade";
-            this.cdAtividadeComodo.Name = "cdAtividadeComodo";
-            // 
-            // vlAtividadeComodo
-            // 
-            this.vlAtividadeComodo.DataPropertyName = "vlAtividade";
-            dataGridViewCellStyle39.Format = "C2";
-            this.vlAtividadeComodo.DefaultCellStyle = dataGridViewCellStyle39;
-            this.vlAtividadeComodo.HeaderText = "Valor";
-            this.vlAtividadeComodo.Name = "vlAtividadeComodo";
-            this.vlAtividadeComodo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.vlAtividadeComodo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.vlAtividadeComodo.Width = 60;
             // 
             // ssTotalizador
             // 
@@ -315,8 +288,8 @@
             // 
             // dgvProdutosAtividades
             // 
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutosAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutosAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProdutosAtividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutosAtividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodoAtividadeProduto,
@@ -334,63 +307,6 @@
             this.dgvProdutosAtividades.TabIndex = 0;
             this.dgvProdutosAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvProdutosAtividades_EditingControlShowing);
             this.dgvProdutosAtividades.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutosAtividades_RowValidated);
-            // 
-            // cdComodoAtividadeProduto
-            // 
-            this.cdComodoAtividadeProduto.DataPropertyName = "cdComodo";
-            this.cdComodoAtividadeProduto.HeaderText = "Cód. Cômodo";
-            this.cdComodoAtividadeProduto.Name = "cdComodoAtividadeProduto";
-            this.cdComodoAtividadeProduto.Visible = false;
-            // 
-            // cdAtividadeProd
-            // 
-            this.cdAtividadeProd.DataPropertyName = "cdAtividade";
-            this.cdAtividadeProd.HeaderText = "Cód. Atividade";
-            this.cdAtividadeProd.Name = "cdAtividadeProd";
-            this.cdAtividadeProd.Visible = false;
-            // 
-            // nmProdutoAtividade
-            // 
-            this.nmProdutoAtividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nmProdutoAtividade.DataPropertyName = "cdProduto";
-            this.nmProdutoAtividade.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.nmProdutoAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.nmProdutoAtividade.HeaderText = "Produto";
-            this.nmProdutoAtividade.Name = "nmProdutoAtividade";
-            // 
-            // vlProdutoAtividade
-            // 
-            this.vlProdutoAtividade.DataPropertyName = "vlProduto";
-            dataGridViewCellStyle41.Format = "C2";
-            this.vlProdutoAtividade.DefaultCellStyle = dataGridViewCellStyle41;
-            this.vlProdutoAtividade.HeaderText = "Valor";
-            this.vlProdutoAtividade.Name = "vlProdutoAtividade";
-            this.vlProdutoAtividade.Width = 70;
-            // 
-            // deConUnidadeMedida
-            // 
-            this.deConUnidadeMedida.DataPropertyName = "deUnidadeMedida";
-            this.deConUnidadeMedida.HeaderText = "Und. Medida";
-            this.deConUnidadeMedida.Name = "deConUnidadeMedida";
-            this.deConUnidadeMedida.ReadOnly = true;
-            this.deConUnidadeMedida.Width = 50;
-            // 
-            // nuQtdProdutoAtividade
-            // 
-            this.nuQtdProdutoAtividade.DataPropertyName = "nuQtdProduto";
-            this.nuQtdProdutoAtividade.HeaderText = "Qtd.";
-            this.nuQtdProdutoAtividade.Name = "nuQtdProdutoAtividade";
-            this.nuQtdProdutoAtividade.Width = 60;
-            // 
-            // vlTotal
-            // 
-            this.vlTotal.DataPropertyName = "vlTotal";
-            dataGridViewCellStyle42.Format = "C2";
-            this.vlTotal.DefaultCellStyle = dataGridViewCellStyle42;
-            this.vlTotal.HeaderText = "Total";
-            this.vlTotal.Name = "vlTotal";
-            this.vlTotal.ReadOnly = true;
-            this.vlTotal.Width = 60;
             // 
             // tpCadastros
             // 
@@ -441,8 +357,8 @@
             // dgvComodos
             // 
             this.dgvComodos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvComodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodo,
@@ -472,8 +388,8 @@
             // dgvProdutos
             // 
             this.dgvProdutos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdProduto,
@@ -505,8 +421,8 @@
             // vlProduto
             // 
             this.vlProduto.DataPropertyName = "vlProduto";
-            dataGridViewCellStyle45.Format = "C2";
-            this.vlProduto.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle9.Format = "C2";
+            this.vlProduto.DefaultCellStyle = dataGridViewCellStyle9;
             this.vlProduto.HeaderText = "Valor";
             this.vlProduto.Name = "vlProduto";
             // 
@@ -548,8 +464,8 @@
             // dgvAtividades
             // 
             this.dgvAtividades.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAtividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdAtividade,
@@ -582,16 +498,16 @@
             // vlAtividadeOrcado
             // 
             this.vlAtividadeOrcado.DataPropertyName = "vlAtividade";
-            dataGridViewCellStyle47.Format = "C2";
-            this.vlAtividadeOrcado.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle11.Format = "C2";
+            this.vlAtividadeOrcado.DefaultCellStyle = dataGridViewCellStyle11;
             this.vlAtividadeOrcado.FillWeight = 228.4264F;
             this.vlAtividadeOrcado.HeaderText = "Valor";
             this.vlAtividadeOrcado.Name = "vlAtividadeOrcado";
             // 
             // dgvProdutosSugeridos
             // 
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutosSugeridos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutosSugeridos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProdutosSugeridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutosSugeridos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdProdAtividadeSug,
@@ -675,6 +591,14 @@
             this.tstbTotalObra.Text = "Total da obra:";
             this.tstbTotalObra.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // tstbBaseDados
+            // 
+            this.tstbBaseDados.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tstbBaseDados.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.tstbBaseDados.Name = "tstbBaseDados";
+            this.tstbBaseDados.Size = new System.Drawing.Size(200, 20);
+            this.tstbBaseDados.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // bsAtividades
             // 
             this.bsAtividades.DataMember = "dtAtividades";
@@ -732,13 +656,89 @@
             // 
             this.bsConProdutosAtividade.DataMember = "ProdutosAtividadesComodo";
             // 
-            // tstbBaseDados
+            // cdComodoAtividade
             // 
-            this.tstbBaseDados.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tstbBaseDados.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.tstbBaseDados.Name = "tstbBaseDados";
-            this.tstbBaseDados.Size = new System.Drawing.Size(200, 20);
-            this.tstbBaseDados.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cdComodoAtividade.DataPropertyName = "cdComodo";
+            this.cdComodoAtividade.HeaderText = "Cód. Cômodo";
+            this.cdComodoAtividade.Name = "cdComodoAtividade";
+            this.cdComodoAtividade.Visible = false;
+            this.cdComodoAtividade.Width = 80;
+            // 
+            // cdAtividadeComodo
+            // 
+            this.cdAtividadeComodo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cdAtividadeComodo.DataPropertyName = "cdAtividade";
+            this.cdAtividadeComodo.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.cdAtividadeComodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cdAtividadeComodo.HeaderText = "Atividade";
+            this.cdAtividadeComodo.Name = "cdAtividadeComodo";
+            // 
+            // vlAtividadeComodo
+            // 
+            this.vlAtividadeComodo.DataPropertyName = "vlAtividade";
+            dataGridViewCellStyle3.Format = "C2";
+            this.vlAtividadeComodo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vlAtividadeComodo.HeaderText = "Valor";
+            this.vlAtividadeComodo.Name = "vlAtividadeComodo";
+            this.vlAtividadeComodo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.vlAtividadeComodo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // cdComodoAtividadeProduto
+            // 
+            this.cdComodoAtividadeProduto.DataPropertyName = "cdComodo";
+            this.cdComodoAtividadeProduto.HeaderText = "Cód. Cômodo";
+            this.cdComodoAtividadeProduto.Name = "cdComodoAtividadeProduto";
+            this.cdComodoAtividadeProduto.Visible = false;
+            // 
+            // cdAtividadeProd
+            // 
+            this.cdAtividadeProd.DataPropertyName = "cdAtividade";
+            this.cdAtividadeProd.HeaderText = "Cód. Atividade";
+            this.cdAtividadeProd.Name = "cdAtividadeProd";
+            this.cdAtividadeProd.Visible = false;
+            // 
+            // nmProdutoAtividade
+            // 
+            this.nmProdutoAtividade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nmProdutoAtividade.DataPropertyName = "cdProduto";
+            this.nmProdutoAtividade.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.nmProdutoAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.nmProdutoAtividade.HeaderText = "Produto";
+            this.nmProdutoAtividade.Name = "nmProdutoAtividade";
+            // 
+            // vlProdutoAtividade
+            // 
+            this.vlProdutoAtividade.DataPropertyName = "vlProduto";
+            dataGridViewCellStyle5.Format = "C2";
+            this.vlProdutoAtividade.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vlProdutoAtividade.HeaderText = "Valor";
+            this.vlProdutoAtividade.Name = "vlProdutoAtividade";
+            this.vlProdutoAtividade.Width = 80;
+            // 
+            // deConUnidadeMedida
+            // 
+            this.deConUnidadeMedida.DataPropertyName = "deUnidadeMedida";
+            this.deConUnidadeMedida.HeaderText = "Und. Medida";
+            this.deConUnidadeMedida.Name = "deConUnidadeMedida";
+            this.deConUnidadeMedida.ReadOnly = true;
+            this.deConUnidadeMedida.Width = 50;
+            // 
+            // nuQtdProdutoAtividade
+            // 
+            this.nuQtdProdutoAtividade.DataPropertyName = "nuQtdProduto";
+            this.nuQtdProdutoAtividade.HeaderText = "Qtd.";
+            this.nuQtdProdutoAtividade.Name = "nuQtdProdutoAtividade";
+            this.nuQtdProdutoAtividade.Width = 60;
+            // 
+            // vlTotal
+            // 
+            this.vlTotal.DataPropertyName = "vlTotal";
+            dataGridViewCellStyle6.Format = "C2";
+            this.vlTotal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.vlTotal.HeaderText = "Total";
+            this.vlTotal.Name = "vlTotal";
+            this.vlTotal.ReadOnly = true;
+            this.vlTotal.Width = 80;
             // 
             // frmPrincipal
             // 
@@ -844,6 +844,14 @@
         private System.Windows.Forms.BindingSource bsConComodos;
         private System.Windows.Forms.BindingSource bsConAtividadesComodo;
         private System.Windows.Forms.BindingSource bsConProdutosAtividade;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslTotalComodo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nmProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vlProduto;
+        private System.Windows.Forms.DataGridViewComboBoxColumn deUnidadeMedida;
+        private System.Windows.Forms.ToolStripTextBox tstbTotalObra;
+        private System.Windows.Forms.ToolStripTextBox tstbBaseDados;
         private System.Windows.Forms.DataGridViewTextBoxColumn cdComodoAtividade;
         private System.Windows.Forms.DataGridViewComboBoxColumn cdAtividadeComodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlAtividadeComodo;
@@ -854,14 +862,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn deConUnidadeMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn nuQtdProdutoAtividade;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlTotal;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel tsslTotalComodo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cdProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nmProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vlProduto;
-        private System.Windows.Forms.DataGridViewComboBoxColumn deUnidadeMedida;
-        private System.Windows.Forms.ToolStripTextBox tstbTotalObra;
-        private System.Windows.Forms.ToolStripTextBox tstbBaseDados;
     }
 }
 
