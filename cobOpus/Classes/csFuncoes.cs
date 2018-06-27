@@ -63,7 +63,17 @@ namespace cobOpus.Classes
         public static void FazerBackUp()
         {
             DirectoryInfo diretorio = new DirectoryInfo(sCaminho);
-            
+
+            if (!Directory.Exists(sCaminho))
+            {
+                Directory.CreateDirectory(sCaminho);
+            }
+
+            if (!Directory.Exists(sCaminhoBkp))
+            {
+                Directory.CreateDirectory(sCaminhoBkp);
+            }
+
             foreach (FileInfo arquivo in diretorio.GetFiles("*.txt"))
             {
                 File.Copy(arquivo.FullName, sCaminhoBkp + arquivo.Name, true);

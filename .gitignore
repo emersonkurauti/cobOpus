@@ -4,3 +4,13 @@
 .vs/cobOpus/v15/Server/sqlite3/db.lock
 .vs/cobOpus/v15/.suo
 .vs/cobOpus/v15/Server/sqlite3/storage.ide-shm
+cobOpus/bin/Debug/cobOpus.exe
+cobOpus/bin/Debug/cobOpus.pdb
+cobOpus/DataBase/Bkp/cobOpus.Dados.csAtividades.txt
+cobOpus/DataBase/Bkp/cobOpus.Dados.csProdutosSugeridos.txt
+cobOpus/DataBase/Bkp/cobOpus.Dados.csProdutosAtividade.txt
+cobOpus/DataBase/Bkp/cobOpus.Dados.csProdutos.txt
+cobOpus/DataBase/Bkp/cobOpus.Dados.csComodos.txt
+cobOpus/DataBase/Bkp/cobOpus.Dados.csAtividadesComodos.txt
+cobOpus/obj/Debug/cobOpus.exe
+cobOpus/obj/Debug/cobOpus.pdb
