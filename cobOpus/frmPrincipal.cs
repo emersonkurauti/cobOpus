@@ -277,6 +277,8 @@ namespace cobOpus
             int nIndexProduto = dgvProdutosAtividades.SelectedRows[0].Index;
             int nIndexColValor = dgvProdutosAtividades.Columns["vlProdutoAtividade"].Index;
             int nIndexColUndMedida = dgvProdutosAtividades.Columns["deConUnidadeMedida"].Index;
+            int nIndexColQtd = dgvProdutosAtividades.Columns["nuQtdProdutoAtividade"].Index;
+            int nIndexColValorTotal = dgvProdutosAtividades.Columns["vlTotal"].Index;
 
             DataRow[] drProduto = oControleDados.oProdutos.dtDados.Select("cdProduto=" + cdProduto.ToString());
             if (drProduto.Length == 0)
@@ -289,6 +291,8 @@ namespace cobOpus
             {
                 dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value = drProduto[0]["vlProduto"].ToString();
             }
+            dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColQtd].Value = 0;
+            dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValorTotal].Value = 0;
         }
 
         private void tbProdutos_Leave(object sender, EventArgs e)

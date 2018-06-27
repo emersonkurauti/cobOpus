@@ -34,7 +34,7 @@ namespace cobOpus.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\emersonkurauti\\cobOpus\\cobOpus\\DataBase\\Bkp\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\emersonkurauti\\cobOpus\\cobOpus\\DataBase\\BackUp\\Bkp\\")]
         public string sCaminhoBaseDadosBKP {
             get {
                 return ((string)(this["sCaminhoBaseDadosBKP"]));

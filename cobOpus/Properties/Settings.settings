@@ -6,7 +6,7 @@
       <Value Profile="(Default)">C:\emersonkurauti\cobOpus\cobOpus\DataBase\</Value>
     </Setting>
     <Setting Name="sCaminhoBaseDadosBKP" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\emersonkurauti\cobOpus\cobOpus\DataBase\Bkp\</Value>
+      <Value Profile="(Default)">C:\emersonkurauti\cobOpus\cobOpus\DataBase\BackUp\Bkp\</Value>
     </Setting>
   </Settings>
 </SettingsFile>
