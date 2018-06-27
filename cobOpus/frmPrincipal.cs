@@ -146,7 +146,6 @@ namespace cobOpus
         private void dgvAtividades_Leave(object sender, EventArgs e)
         {
             oControleDados.oAtividades.AtualizarCodigos();
-            CarregarRelacionamentos();
         }
 
         private void tmStatus_Tick(object sender, EventArgs e)
