@@ -25,7 +25,7 @@ namespace cobOpus.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Google Drive\\cobOpus\\DataBase\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\emersonkurauti\\cobOpus\\cobOpus\\DataBase\\")]
         public string sCaminhoBaseDados {
             get {
                 return ((string)(this["sCaminhoBaseDados"]));
@@ -34,7 +34,7 @@ namespace cobOpus.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Google Drive\\cobOpus\\Bkp\\DataBase\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\emersonkurauti\\cobOpus\\cobOpus\\DataBase\\Bkp\\")]
         public string sCaminhoBaseDadosBKP {
             get {
                 return ((string)(this["sCaminhoBaseDadosBKP"]));

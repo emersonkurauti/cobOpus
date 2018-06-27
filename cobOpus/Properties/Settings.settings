@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="sCaminhoBaseDados" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Google Drive\cobOpus\DataBase\</Value>
+      <Value Profile="(Default)">C:\emersonkurauti\cobOpus\cobOpus\DataBase\</Value>
     </Setting>
     <Setting Name="sCaminhoBaseDadosBKP" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Google Drive\cobOpus\Bkp\DataBase\</Value>
+      <Value Profile="(Default)">C:\emersonkurauti\cobOpus\cobOpus\DataBase\Bkp\</Value>
     </Setting>
   </Settings>
 </SettingsFile>
