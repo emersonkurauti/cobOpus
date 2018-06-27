@@ -62,16 +62,15 @@ namespace cobOpus.Classes
 
         public static void FazerBackUp()
         {
-            DirectoryInfo diretorio = new DirectoryInfo(sCaminho);
-
-            sCaminhoBkp = sCaminhoBkp.Replace("Bkp", "Bkp_" + 
+            sCaminhoBkp = sCaminhoBkp.Replace("Bkp", "Bkp_" +
                 DateTime.Now.ToString().Substring(0, 16).Replace("/", "-").Replace(" ", "_").Replace(":", "-"));
 
+            DirectoryInfo diretorio = new DirectoryInfo(sCaminho);
             if (!Directory.Exists(sCaminho))
             {
                 Directory.CreateDirectory(sCaminho);
             }
-
+            
             if (!Directory.Exists(sCaminhoBkp))
             {
                 Directory.CreateDirectory(sCaminhoBkp);
