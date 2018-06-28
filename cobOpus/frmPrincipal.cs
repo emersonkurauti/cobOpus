@@ -497,6 +497,11 @@ namespace cobOpus
 
         private void dgvConAtividades_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvConAtividades.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
             int nLinhaSelecionada = dgvConAtividades.SelectedRows[0].Index;
             dgvConAtividades.Rows[nLinhaSelecionada].Selected = true;
             CarregarProdutosSugeridos();
