@@ -200,10 +200,18 @@ namespace cobOpus
             int nIndexColUndMedida = dgvProdutosAtividades.Columns["deConUnidadeMedida"].Index;
             int nIndexColQtdProd = dgvProdutosAtividades.Columns["nuQtdProdutoAtividade"].Index;
             int nIndexColValorTot = dgvProdutosAtividades.Columns["vlTotal"].Index;
-            int nCdAtividade = Convert.ToInt32(dgvConAtividades.SelectedRows[0].Cells[nIndexColCodAtividadeCon].Value.ToString());
-            int nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCodComodo].Value.ToString());
+            int nCdAtividade = 0;
+            int nCdComodo = 0;
             int nCdProduto;
 
+            if (dgvConComodos.SelectedRows[0].Cells[nIndexColCodComodo].Value != null)
+            {
+                int.TryParse(dgvConComodos.SelectedRows[0].Cells[nIndexColCodComodo].Value.ToString(), out nCdComodo);
+            }
+            if (dgvConAtividades.SelectedRows[0].Cells[nIndexColCodAtividadeCon].Value != null)
+            {
+                int.TryParse(dgvConAtividades.SelectedRows[0].Cells[nIndexColCodAtividadeCon].Value.ToString(), out nCdAtividade);
+            }
             DataRow[] drProdutosSugeridos = oControleDados.oProdutosSugeridos.dtDados.Select("cdAtividade = " + nCdAtividade);
 
             for (int nIndexProdSug = 0; nIndexProdSug < drProdutosSugeridos.Length; nIndexProdSug++)
@@ -470,6 +478,8 @@ namespace cobOpus
 
         private void dgvConAtividades_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
+            int nLinhaSelecionada = dgvConAtividades.SelectedRows[0].Index;
+            dgvConAtividades.Rows[nLinhaSelecionada].Selected = true;
             CarregarProdutosSugeridos();
         }
     }
