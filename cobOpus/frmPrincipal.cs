@@ -374,31 +374,10 @@ namespace cobOpus
 
         private double RetornarTotalComodoSelecionado()
         {
-            object oSumAtividades;
-            object oSumProdutos;
-            double vlComodo = 0;
-
-            int nCdComodo;
             int nIndexColCdComodo = dgvConComodos.Columns["cdComodoCon"].Index;
+            int nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCdComodo].Value.ToString());
 
-            if (dgvConComodos.SelectedRows.Count > 0)
-            {
-                nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCdComodo].Value.ToString());
-                oSumAtividades = oControleDados.oAtividadesComodos.dtDados.Compute("Sum(vlAtividade)", "cdComodo = " + nCdComodo.ToString());
-                oSumProdutos = oControleDados.oProdutosAtividade.dtDados.Compute("Sum(vlTotal)", "cdComodo = " + nCdComodo.ToString());
-
-                if (oSumAtividades.GetType() != typeof(System.DBNull))
-                {
-                    vlComodo += Convert.ToDouble(oSumAtividades);
-                }
-
-                if (oSumProdutos.GetType() != typeof(System.DBNull))
-                {
-                    vlComodo += Convert.ToDouble(oSumProdutos);
-                }
-            }
-
-            return vlComodo;
+            return RetornarTotalComodo(nCdComodo);
         }
 
         private double RetornarTotalAtividadeSelecionada()
@@ -409,20 +388,33 @@ namespace cobOpus
             int nIndexColCdComodo = dgvConComodos.Columns["cdComodoCon"].Index;
             int nIndexColCdAtividade = dgvConAtividades.Columns["cdAtividadeComodo"].Index;
             int nIndexColVlAtividade = dgvConAtividades.Columns["vlAtividadeComodo"].Index;
+            int nIndexColFlAtivo = dgvConAtividades.Columns["ckbContabilizaAtividade"].Index;
 
-            if (dgvConAtividades.SelectedRows.Count > 0 && dgvConAtividades.SelectedRows[0].Cells[nIndexColVlAtividade].Value != null)
+            if (dgvConAtividades.SelectedRows.Count == 0)
             {
-                Double.TryParse(dgvConAtividades.SelectedRows[0].Cells[nIndexColVlAtividade].Value.ToString(), out vlAtividade);
-                nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCdComodo].Value.ToString());
-                int.TryParse(dgvConAtividades.SelectedRows[0].Cells[nIndexColCdAtividade].Value.ToString(), out nCdAtividade);
+                return vlAtividade;
+            }
 
-                oSumProdutos = oControleDados.oProdutosAtividade.dtDados.Compute("Sum(vlTotal)", "cdComodo = " + nCdComodo.ToString()
-                    + " and cdAtividade =" + nCdAtividade.ToString());
+            if (dgvConAtividades.SelectedRows[0].Cells[nIndexColVlAtividade].Value == null)
+            {
+                return vlAtividade;
+            }
 
-                if (oSumProdutos.GetType() != typeof(System.DBNull))
-                {
-                    vlAtividade += Convert.ToDouble(oSumProdutos);
-                }
+            if (dgvConAtividades.SelectedRows[0].Cells[nIndexColFlAtivo].Value.ToString() == "N")
+            {
+                return vlAtividade;
+            }
+
+            Double.TryParse(dgvConAtividades.SelectedRows[0].Cells[nIndexColVlAtividade].Value.ToString(), out vlAtividade);
+            nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCdComodo].Value.ToString());
+            int.TryParse(dgvConAtividades.SelectedRows[0].Cells[nIndexColCdAtividade].Value.ToString(), out nCdAtividade);
+
+            oSumProdutos = oControleDados.oProdutosAtividade.dtDados.Compute("Sum(vlTotal)", "cdComodo = " + nCdComodo.ToString()
+                + " and cdAtividade =" + nCdAtividade.ToString());
+
+            if (oSumProdutos.GetType() != typeof(System.DBNull))
+            {
+                vlAtividade += Convert.ToDouble(oSumProdutos);
             }
 
             return vlAtividade;
@@ -430,35 +422,62 @@ namespace cobOpus
 
         private double RetornarTotalDaObra()
         {
-            object oSumAtividades;
-            object oSumProdutos;
-            double vlComodo = 0;
             double vlTotalObra = 0;
-
             int nCdComodo;
             int nIndexColCdComodo = dgvConComodos.Columns["cdComodoCon"].Index;
 
             for (int nIndiceComodo = 0; nIndiceComodo < dgvConComodos.RowCount - 1; nIndiceComodo++)
             {
-                vlComodo = 0;
                 nCdComodo = Convert.ToInt32(dgvConComodos.Rows[nIndiceComodo].Cells[nIndexColCdComodo].Value.ToString());
-                oSumAtividades = oControleDados.oAtividadesComodos.dtDados.Compute("Sum(vlAtividade)", "cdComodo = " + nCdComodo.ToString());
-                oSumProdutos = oControleDados.oProdutosAtividade.dtDados.Compute("Sum(vlTotal)", "cdComodo = " + nCdComodo.ToString());
+                vlTotalObra += RetornarTotalComodo(nCdComodo); ;
+            }
+
+            return vlTotalObra;
+        }
+
+        private double RetornarTotalComodo(int pnCdComodo)
+        {
+            object oSumAtividades;
+            double vlComodo = 0;
+            int nCdAtividade;
+
+            if (dgvConComodos.SelectedRows.Count > 0)
+            {
+                oSumAtividades = oControleDados.oAtividadesComodos.dtDados.Compute("Sum(vlAtividade)",
+                    "cdComodo = " + pnCdComodo.ToString() + " and flAtivo = 'S'");
 
                 if (oSumAtividades.GetType() != typeof(System.DBNull))
                 {
                     vlComodo += Convert.ToDouble(oSumAtividades);
                 }
 
-                if (oSumProdutos.GetType() != typeof(System.DBNull))
-                {
-                    vlComodo += Convert.ToDouble(oSumProdutos);
-                }
+                DataRow[] drAtividadesAtivas = oControleDados.oAtividadesComodos.dtDados.Select("cdComodo = " + pnCdComodo.ToString() +
+                    " and flAtivo = 'S'");
 
-                vlTotalObra += vlComodo;
+                for (int nIndiceAtividade = 0; nIndiceAtividade < drAtividadesAtivas.Length; nIndiceAtividade++)
+                {
+                    nCdAtividade = Convert.ToInt32(drAtividadesAtivas[nIndiceAtividade]["cdAtividade"].ToString());
+                    vlComodo += RetornarTotalProdutosAtividadesAtivas(pnCdComodo, nCdAtividade);
+                }
             }
 
-            return vlTotalObra;
+            return vlComodo;
+        }
+
+        private double RetornarTotalProdutosAtividadesAtivas(int pnCdComodo, int pnCdAtividade)
+        {
+            object oSumProdutos;
+            double vlProdutos = 0;
+
+            oSumProdutos = oControleDados.oProdutosAtividade.dtDados.Compute("Sum(vlTotal)", "cdComodo = " + pnCdComodo.ToString() +
+                " and cdAtividade = " + pnCdAtividade.ToString());
+
+            if (oSumProdutos.GetType() != typeof(System.DBNull))
+            {
+                vlProdutos += Convert.ToDouble(oSumProdutos);
+            }
+
+            return vlProdutos;
         }
 
         private void dgvConAtividades_SelectionChanged(object sender, EventArgs e)

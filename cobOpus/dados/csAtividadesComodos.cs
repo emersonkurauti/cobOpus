@@ -17,6 +17,7 @@ namespace cobOpus.Dados
             dtDados.Columns.Add("cdComodo", typeof(int));
             dtDados.Columns.Add("cdAtividade", typeof(int));
             dtDados.Columns.Add("vlAtividade", typeof(float));
+            dtDados.Columns.Add("flAtivo", typeof(string));
         }
     }
 }
