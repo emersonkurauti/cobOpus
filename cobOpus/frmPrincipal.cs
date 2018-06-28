@@ -121,7 +121,7 @@ namespace cobOpus
             dgvcProdutos.DisplayMember = "nmProduto";
             dgvcProdutos.ValueMember = "cdProduto";
 
-            DataGridViewComboBoxColumn dgvcConProdutos = (DataGridViewComboBoxColumn)dgvProdutosAtividades.Columns["nmProdutoAtividade"];
+            DataGridViewComboBoxColumn dgvcConProdutos = (DataGridViewComboBoxColumn)dgvProdutosAtividades.Columns["cdProdutoAtividade"];
             dgvcConProdutos.DataSource = oControleDados.oProdutos.dtDados;
             dgvcConProdutos.DisplayMember = "nmProduto";
             dgvcConProdutos.ValueMember = "cdProduto";
@@ -183,6 +183,46 @@ namespace cobOpus
                 DataRow[] drAtividade = oControleDados.oAtividades.dtDados.Select("cdAtividade=" + cdAtividade.ToString());
                 dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColValor].Value = drAtividade[0]["vlAtividade"].ToString();
             }
+        }
+
+        private void CarregarProdutosSugeridos()
+        {
+            if (dgvProdutosAtividades.Rows.Count > 1)
+            {
+                return;
+            }
+
+            int nIndexColCodAtividadeCon = dgvConAtividades.Columns["cdAtividadeComodo"].Index;
+            int nIndexColCodComodo = dgvConComodos.Columns["cdComodoCon"].Index;
+            int nIndexColCodAtividade = dgvProdutosAtividades.Columns["cdAtividadeProd"].Index;
+            int nIndexColCodigoProd = dgvProdutosAtividades.Columns["cdProdutoAtividade"].Index;
+            int nIndexColValor = dgvProdutosAtividades.Columns["vlProdutoAtividade"].Index;
+            int nIndexColUndMedida = dgvProdutosAtividades.Columns["deConUnidadeMedida"].Index;
+            int nIndexColQtdProd = dgvProdutosAtividades.Columns["nuQtdProdutoAtividade"].Index;
+            int nIndexColValorTot = dgvProdutosAtividades.Columns["vlTotal"].Index;
+            int nCdAtividade = Convert.ToInt32(dgvConAtividades.SelectedRows[0].Cells[nIndexColCodAtividadeCon].Value.ToString());
+            int nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCodComodo].Value.ToString());
+            int nCdProduto;
+
+            DataRow[] drProdutosSugeridos = oControleDados.oProdutosSugeridos.dtDados.Select("cdAtividade = " + nCdAtividade);
+
+            for (int nIndexProdSug = 0; nIndexProdSug < drProdutosSugeridos.Length; nIndexProdSug++)
+            {
+                nCdProduto = Convert.ToInt32(drProdutosSugeridos[nIndexProdSug]["cdProduto"].ToString());
+                DataRow[] drDadosProduto = oControleDados.oProdutos.dtDados.Select("cdProduto = " + nCdProduto);
+
+                DataRow drProduto = oControleDados.oProdutosAtividade.dtDados.NewRow();
+                drProduto["cdComodo"] = nCdComodo;
+                drProduto["cdAtividade"] = nCdAtividade;
+                drProduto["cdProduto"] = nCdProduto;
+                drProduto["vlProduto"] = drDadosProduto[0]["vlProduto"];
+                drProduto["deUnidadeMedida"] = drDadosProduto[0]["deUnidadeMedida"];
+                drProduto["nuQtdProduto"] = 0;
+                drProduto["vlTotal"] = 0;
+                oControleDados.oProdutosAtividade.dtDados.Rows.Add(drProduto);
+            }
+
+            dgvProdutosAtividades.Refresh();
         }
 
         private void AtualizarFiltroAtividades()
@@ -362,7 +402,7 @@ namespace cobOpus
             int nIndexColCdAtividade = dgvConAtividades.Columns["cdAtividadeComodo"].Index;
             int nIndexColVlAtividade = dgvConAtividades.Columns["vlAtividadeComodo"].Index;
 
-            if (dgvConAtividades.SelectedRows.Count > 0)
+            if (dgvConAtividades.SelectedRows.Count > 0 && dgvConAtividades.SelectedRows[0].Cells[nIndexColVlAtividade].Value != null)
             {
                 Double.TryParse(dgvConAtividades.SelectedRows[0].Cells[nIndexColVlAtividade].Value.ToString(), out vlAtividade);
                 nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCdComodo].Value.ToString());
@@ -426,6 +466,11 @@ namespace cobOpus
         private void dgvConComodos_SelectionChanged(object sender, EventArgs e)
         {
             AtualizarTotais();
+        }
+
+        private void dgvConAtividades_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            CarregarProdutosSugeridos();
         }
     }
 }
