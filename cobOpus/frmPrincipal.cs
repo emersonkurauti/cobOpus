@@ -492,6 +492,11 @@ namespace cobOpus
 
         private void dgvProdutosAtividades_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
+            if(dgvProdutosAtividades.SelectedRows.Count==0)
+            {
+                return;
+            }
+
             int nIndexColCodigo = dgvProdutosAtividades.Columns["cdProdutoAtividade"].Index;
             if (e.ColumnIndex != nIndexColCodigo)
             {
