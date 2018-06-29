@@ -178,11 +178,13 @@ namespace cobOpus
             int cdAtividade = Convert.ToInt32(cbAtividade.SelectedValue);
             int nIndexAtividade = dgvConAtividades.SelectedRows[0].Index;
             int nIndexColValor = dgvConAtividades.Columns["vlAtividadeComodo"].Index;
+            int nIndexColflAtivo = dgvConAtividades.Columns["ckbContabilizaAtividade"].Index;
 
             if (dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColValor].Value.ToString() == string.Empty)
             {
                 DataRow[] drAtividade = oControleDados.oAtividades.dtDados.Select("cdAtividade=" + cdAtividade.ToString());
                 dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColValor].Value = drAtividade[0]["vlAtividade"].ToString();
+                dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColflAtivo].Value = "S";
             }
         }
 
