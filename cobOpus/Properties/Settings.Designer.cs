@@ -22,23 +22,5 @@ namespace cobOpus.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\emersonkurauti\\cobOpus\\cobOpus\\DataBase\\")]
-        public string sCaminhoBaseDados {
-            get {
-                return ((string)(this["sCaminhoBaseDados"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\emersonkurauti\\cobOpus\\cobOpus\\DataBase\\BackUp\\Bkp\\")]
-        public string sCaminhoBaseDadosBKP {
-            get {
-                return ((string)(this["sCaminhoBaseDadosBKP"]));
-            }
-        }
     }
 }

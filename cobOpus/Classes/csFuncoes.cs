@@ -11,8 +11,8 @@ namespace cobOpus.Classes
 {
     class csFuncoes
     {
-        public static string sCaminho = Properties.Settings.Default.sCaminhoBaseDados;
-        private static string sCaminhoBkp = Properties.Settings.Default.sCaminhoBaseDadosBKP;
+        public static string sCaminho = AppDomain.CurrentDomain.BaseDirectory.ToString() + "DataBase\\";
+        private static string sCaminhoBkp = sCaminho + "BackUp\\";
 
         public static void DataTableSaveToFile(csDadosBase oDadosBase, DataTable dtDados, string sNomeArquivo)
         {
