@@ -21,6 +21,7 @@ namespace cobOpus
 
         bool bSelecionandoAtividade;
         bool bSelecionandoProduto;
+        int _nCdProduto;
 
         public frmPrincipal()
         {
@@ -320,26 +321,8 @@ namespace cobOpus
                 return;
             }
 
-            int cdProduto = Convert.ToInt32(cbProduto.SelectedValue);
-            int nIndexProduto = dgvProdutosAtividades.SelectedRows[0].Index;
-            int nIndexColValor = dgvProdutosAtividades.Columns["vlProdutoAtividade"].Index;
-            int nIndexColUndMedida = dgvProdutosAtividades.Columns["deConUnidadeMedida"].Index;
-            int nIndexColQtd = dgvProdutosAtividades.Columns["nuQtdProdutoAtividade"].Index;
-            int nIndexColValorTotal = dgvProdutosAtividades.Columns["vlTotal"].Index;
-
-            DataRow[] drProduto = oControleDados.oProdutos.dtDados.Select("cdProduto=" + cdProduto.ToString());
-            if (drProduto.Length == 0)
-            {
-                return;
-            }
-
-            dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColUndMedida].Value = drProduto[0]["deUnidadeMedida"].ToString();
-            if (dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value.ToString() == string.Empty)
-            {
-                dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value = drProduto[0]["vlProduto"].ToString();
-            }
-            dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColQtd].Value = 0;
-            dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValorTotal].Value = 0;
+            _nCdProduto = Convert.ToInt32(cbProduto.SelectedValue);
+            
         }
 
         private void tbProdutos_Leave(object sender, EventArgs e)
@@ -505,6 +488,35 @@ namespace cobOpus
             int nLinhaSelecionada = dgvConAtividades.SelectedRows[0].Index;
             dgvConAtividades.Rows[nLinhaSelecionada].Selected = true;
             CarregarProdutosSugeridos();
+        }
+
+        private void dgvProdutosAtividades_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            int nIndexColCodigo = dgvProdutosAtividades.Columns["cdProdutoAtividade"].Index;
+            if (e.ColumnIndex != nIndexColCodigo)
+            {
+                return;
+            }
+
+            int nIndexProduto = dgvProdutosAtividades.SelectedRows[0].Index;
+            int nIndexColValor = dgvProdutosAtividades.Columns["vlProdutoAtividade"].Index;
+            int nIndexColUndMedida = dgvProdutosAtividades.Columns["deConUnidadeMedida"].Index;
+            int nIndexColQtd = dgvProdutosAtividades.Columns["nuQtdProdutoAtividade"].Index;
+            int nIndexColValorTotal = dgvProdutosAtividades.Columns["vlTotal"].Index;
+
+            DataRow[] drProduto = oControleDados.oProdutos.dtDados.Select("cdProduto=" + _nCdProduto.ToString());
+            if (drProduto.Length == 0)
+            {
+                return;
+            }
+
+            dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColUndMedida].Value = drProduto[0]["deUnidadeMedida"].ToString();
+            if (dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value.ToString() == string.Empty)
+            {
+                dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value = drProduto[0]["vlProduto"].ToString();
+                dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColQtd].Value = 0;
+                dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValorTotal].Value = 0;
+            }
         }
     }
 }
