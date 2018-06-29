@@ -516,12 +516,15 @@ namespace cobOpus
             }
 
             dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColUndMedida].Value = drProduto[0]["deUnidadeMedida"].ToString();
-            if (dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value.ToString() == string.Empty)
+            if (dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColQtd].Value.ToString() == string.Empty ||
+                dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColQtd].Value.ToString() == "0")
             {
                 dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValor].Value = drProduto[0]["vlProduto"].ToString();
                 dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColQtd].Value = 0;
                 dgvProdutosAtividades.Rows[nIndexProduto].Cells[nIndexColValorTotal].Value = 0;
             }
+
+            _nCdProduto = 0;
         }
     }
 }
