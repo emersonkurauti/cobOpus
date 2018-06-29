@@ -17,3 +17,4 @@ cobOpus/bin/Release/cobOpus.exe.config
 cobOpus/bin/Release/cobOpus.exe
 cobOpus/bin/Release/cobOpus.pdb
 .vs/cobOpus/DesignTimeBuild/.dtbcache
+cobOpus/bin/Debug/cobOpus.exe_PROD.config

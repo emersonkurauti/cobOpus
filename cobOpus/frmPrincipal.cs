@@ -411,7 +411,7 @@ namespace cobOpus
             int nCdComodo;
             int nIndexColCdComodo = dgvConComodos.Columns["cdComodoCon"].Index;
 
-            for (int nIndiceComodo = 0; nIndiceComodo < dgvConComodos.RowCount - 1; nIndiceComodo++)
+            for (int nIndiceComodo = 0; nIndiceComodo < dgvConComodos.RowCount; nIndiceComodo++)
             {
                 nCdComodo = Convert.ToInt32(dgvConComodos.Rows[nIndiceComodo].Cells[nIndexColCdComodo].Value.ToString());
                 vlTotalObra += RetornarTotalComodo(nCdComodo); ;
