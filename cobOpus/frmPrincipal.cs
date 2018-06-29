@@ -183,6 +183,10 @@ namespace cobOpus
             if (dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColValor].Value.ToString() == string.Empty)
             {
                 DataRow[] drAtividade = oControleDados.oAtividades.dtDados.Select("cdAtividade=" + cdAtividade.ToString());
+                if (drAtividade.Length == 0)
+                {
+                    return;
+                }
                 dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColValor].Value = drAtividade[0]["vlAtividade"].ToString();
                 dgvConAtividades.Rows[nIndexAtividade].Cells[nIndexColflAtivo].Value = "S";
             }
