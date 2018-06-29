@@ -91,6 +91,7 @@ namespace cobOpus
         private void VincularDataSourceControles()
         {
             bsConComodos.DataSource = dsPrincipal;
+            bsConComodos.Sort = "nmComodo";
             bsConAtividadesComodo.DataSource = bsConComodos;
             bsConProdutosAtividade.DataSource = bsConAtividadesComodo;
 
@@ -363,6 +364,11 @@ namespace cobOpus
 
         private double RetornarTotalComodoSelecionado()
         {
+            if (dgvConComodos.SelectedRows.Count == 0)
+            {
+                return 0;
+            }
+
             int nIndexColCdComodo = dgvConComodos.Columns["cdComodoCon"].Index;
             int nCdComodo = Convert.ToInt32(dgvConComodos.SelectedRows[0].Cells[nIndexColCdComodo].Value.ToString());
 
@@ -378,6 +384,11 @@ namespace cobOpus
             int nIndexColCdAtividade = dgvConAtividades.Columns["cdAtividadeComodo"].Index;
             int nIndexColVlAtividade = dgvConAtividades.Columns["vlAtividadeComodo"].Index;
             int nIndexColFlAtivo = dgvConAtividades.Columns["ckbContabilizaAtividade"].Index;
+
+            if (dgvConComodos.SelectedRows.Count == 0)
+            {
+                return vlAtividade;
+            }
 
             if (dgvConAtividades.SelectedRows.Count == 0)
             {
