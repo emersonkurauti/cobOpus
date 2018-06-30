@@ -8,6 +8,12 @@ namespace cobOpus.Dados
 {
     class csProdutos : csDadosBase
     {
+        public csProdutos() : base()
+        { }
+
+        public csProdutos(string psNomeArquivo) : base(psNomeArquivo)
+        { }
+
         public override void Inicializar()
         {
             sCampoCodigo = "cdProduto";

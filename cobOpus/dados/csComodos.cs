@@ -10,6 +10,12 @@ namespace cobOpus.Dados
 {
     class csComodos : csDadosBase
     {
+        public csComodos() : base()
+        { }
+
+        public csComodos(string psNomeArquivo) : base(psNomeArquivo)
+        { }
+
         public override void Inicializar()
         {
             sCampoCodigo = "cdComodo";

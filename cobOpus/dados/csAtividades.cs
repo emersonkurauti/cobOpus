@@ -9,6 +9,12 @@ namespace cobOpus.Dados
 {
     class csAtividades : csDadosBase
     {
+        public csAtividades() : base()
+        { }
+
+        public csAtividades(string psNomeArquivo) : base(psNomeArquivo)
+        { }
+
         public override void Inicializar()
         {
             sCampoCodigo = "cdAtividade";

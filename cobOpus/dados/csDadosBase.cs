@@ -12,14 +12,22 @@ namespace cobOpus.Dados
     class csDadosBase
     {
         private csFuncoes Funcoes;
-
+        public bool pbEstahImportando;
         public string sCampoCodigo;
         public DataTable dtDados { get; set; }
 
         public csDadosBase()
         {
             Inicializar();
-            Carregar();
+            pbEstahImportando = false;
+            Carregar(this.ToString() + ".txt");
+        }
+
+        public csDadosBase(string psNomeArquivo)
+        {
+            Inicializar();
+            pbEstahImportando = true;
+            Carregar(psNomeArquivo);
         }
 
         public virtual void Inicializar()
@@ -28,9 +36,9 @@ namespace cobOpus.Dados
             dtDados = new DataTable();
         }
 
-        public virtual void Carregar()
+        public virtual void Carregar(string psNomeArquivo)
         {
-            csFuncoes.DataTableLoadFromFile(dtDados, this.ToString() + ".txt");
+            csFuncoes.DataTableLoadFromFile(dtDados, psNomeArquivo, pbEstahImportando);
         }
 
         public virtual void Salvar()
@@ -39,7 +47,7 @@ namespace cobOpus.Dados
             csFuncoes.DataTableSaveToFile(this, dtDados, this.ToString() + ".txt");
         }
 
-        public int RetornarProximoCodigo(int nLinha)
+        public int RetornarProximoCodigo(int nLinha = -999)
         {
             if (sCampoCodigo == string.Empty)
             {
@@ -56,7 +64,12 @@ namespace cobOpus.Dados
                 nCodigo = Convert.ToInt32(oResultado[0][sCampoCodigo]);
                 nCodigo++;
             }
-            dtDados.Rows[nLinha][sCampoCodigo] = nCodigo;
+
+            if (nLinha != -999)
+            {
+                dtDados.Rows[nLinha][sCampoCodigo] = nCodigo;
+            }
+
             return nCodigo;
         }
 

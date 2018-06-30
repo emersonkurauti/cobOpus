@@ -39,6 +39,7 @@ namespace cobOpus
         private void CarregarRelacionamentos()
         {
             dsPrincipal.Tables.Add(oControleDados.oComodos.dtDados);
+            dsPrincipal.Tables.Add(oControleDados.oProdutos.dtDados);
             dsPrincipal.Tables.Add(oControleDados.oAtividades.dtDados);
             dsPrincipal.Tables.Add(oControleDados.oProdutosSugeridos.dtDados);
 
@@ -103,7 +104,7 @@ namespace cobOpus
         private void tsmiSalvar_Click(object sender, EventArgs e)
         {
             oControleDados.SalvarDataTables();
-            tstbStatus.Visible = true;
+            tstbImportacao.Visible = true;
             tmStatus.Start();
         }
 
@@ -116,7 +117,7 @@ namespace cobOpus
         private void VincluarDataTables()
         {
             dgvComodos.DataSource = oControleDados.oComodos.dtDados;
-            dgvProdutos.DataSource = oControleDados.oProdutos.dtDados;            
+            dgvProdutos.DataSource = oControleDados.oProdutos.dtDados;
 
             DataGridViewComboBoxColumn dgvcProdutos = (DataGridViewComboBoxColumn)dgvProdutosSugeridos.Columns["nmProdutoAtiv"];
             dgvcProdutos.DataSource = oControleDados.oProdutos.dtDados;
@@ -152,6 +153,7 @@ namespace cobOpus
 
         private void tmStatus_Tick(object sender, EventArgs e)
         {
+            tstbImportacao.Visible = false;
             tstbStatus.Visible = false;
         }
 
@@ -329,7 +331,7 @@ namespace cobOpus
             }
 
             _nCdProduto = Convert.ToInt32(cbProduto.SelectedValue);
-            
+
         }
 
         private void tbProdutos_Leave(object sender, EventArgs e)
@@ -509,7 +511,7 @@ namespace cobOpus
 
         private void dgvProdutosAtividades_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvProdutosAtividades.SelectedRows.Count==0)
+            if (dgvProdutosAtividades.SelectedRows.Count == 0)
             {
                 return;
             }
@@ -542,6 +544,74 @@ namespace cobOpus
             }
 
             _nCdProduto = 0;
+        }
+
+        private void tsmiImportarComodos_Click(object sender, EventArgs e)
+        {
+            ImportarRegistros(csFuncoes.TipoImportacao.Comodos);
+        }
+
+        private void tsmiImportarProdutos_Click(object sender, EventArgs e)
+        {
+            ImportarRegistros(csFuncoes.TipoImportacao.Produtos);
+        }
+
+        private void tsmiImportarAtividades_Click(object sender, EventArgs e)
+        {
+            ImportarRegistros(csFuncoes.TipoImportacao.Atividades);
+        }
+
+        private string RetornarFiltro(csFuncoes.TipoImportacao peTpImportacao)
+        {
+            if (peTpImportacao == csFuncoes.TipoImportacao.Comodos)
+            {
+                return oControleDados.oComodos.ToString();
+            }
+            if (peTpImportacao == csFuncoes.TipoImportacao.Produtos)
+            {
+                return oControleDados.oProdutos.ToString();
+            }
+            if (peTpImportacao == csFuncoes.TipoImportacao.Atividades)
+            {
+                return oControleDados.oAtividades.ToString();
+            }
+
+            return string.Empty;
+        }
+
+        private void ImportarRegistros(csFuncoes.TipoImportacao peTpImportacao)
+        {
+            string sFiltro = RetornarFiltro(peTpImportacao);
+            ofdArquivo.Multiselect = false;
+            ofdArquivo.Title = "Selecionar arquivo para importar";
+            ofdArquivo.Filter = "Dados (" + sFiltro + ".txt)|" + sFiltro + ".txt";
+
+            if (ofdArquivo.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            CentralizarPanelProgresso();
+            pnProcessamento.Visible = true;
+            try
+            {
+                pnProcessamento.Refresh();
+                pnProcessamento.BringToFront();
+                tcPrincipal.SelectedTab = tpCadastros;
+                csFuncoes.ImportarDados(peTpImportacao, ofdArquivo.FileName, oControleDados, pbProgresso);
+            }
+            finally
+            {
+                tstbImportacao.Visible = true;
+                tmStatus.Start();
+                pnProcessamento.Visible = false;
+            }
+        }
+
+        private void CentralizarPanelProgresso()
+        {
+            pnProcessamento.Left = (this.Width / 2) - (pnProcessamento.Width / 2);
+            pnProcessamento.Top = (this.Height / 2) - (pnProcessamento.Height / 2);
         }
     }
 }

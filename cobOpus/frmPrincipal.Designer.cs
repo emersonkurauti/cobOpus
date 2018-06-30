@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tcPrincipal = new System.Windows.Forms.TabControl();
             this.tpControle = new System.Windows.Forms.TabPage();
@@ -88,19 +88,25 @@
             this.msControle = new System.Windows.Forms.MenuStrip();
             this.tsmiSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFechar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tstbStatus = new System.Windows.Forms.ToolStripTextBox();
+            this.tstbImportacao = new System.Windows.Forms.ToolStripTextBox();
             this.tstbTotalObra = new System.Windows.Forms.ToolStripTextBox();
             this.tstbBaseDados = new System.Windows.Forms.ToolStripTextBox();
             this.bsAtividades = new System.Windows.Forms.BindingSource(this.components);
             this.bsProdutosSugeridos = new System.Windows.Forms.BindingSource(this.components);
             this.dsPrincipal = new System.Data.DataSet();
-            this.dtComodos = new System.Data.DataTable();
-            this.dcCdComodo = new System.Data.DataColumn();
-            this.dcNmComodo = new System.Data.DataColumn();
             this.tmStatus = new System.Windows.Forms.Timer(this.components);
             this.bsConComodos = new System.Windows.Forms.BindingSource(this.components);
             this.bsConAtividadesComodo = new System.Windows.Forms.BindingSource(this.components);
             this.bsConProdutosAtividade = new System.Windows.Forms.BindingSource(this.components);
+            this.cmsFuncoes = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiImportarComodos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImportarProdutos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiImportarAtividades = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnProcessamento = new System.Windows.Forms.Panel();
+            this.pbProgresso = new System.Windows.Forms.ProgressBar();
+            this.lbMensagemProcessamento = new System.Windows.Forms.Label();
+            this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
+            this.tstbStatus = new System.Windows.Forms.ToolStripTextBox();
             this.tcPrincipal.SuspendLayout();
             this.tpControle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scControle)).BeginInit();
@@ -137,10 +143,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsAtividades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProdutosSugeridos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtComodos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConComodos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConAtividadesComodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConProdutosAtividade)).BeginInit();
+            this.cmsFuncoes.SuspendLayout();
+            this.pnProcessamento.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPrincipal
@@ -151,7 +158,7 @@
             this.tcPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tcPrincipal.Name = "tcPrincipal";
             this.tcPrincipal.SelectedIndex = 0;
-            this.tcPrincipal.Size = new System.Drawing.Size(887, 386);
+            this.tcPrincipal.Size = new System.Drawing.Size(884, 386);
             this.tcPrincipal.TabIndex = 0;
             // 
             // tpControle
@@ -160,7 +167,7 @@
             this.tpControle.Location = new System.Drawing.Point(4, 22);
             this.tpControle.Name = "tpControle";
             this.tpControle.Padding = new System.Windows.Forms.Padding(3);
-            this.tpControle.Size = new System.Drawing.Size(879, 360);
+            this.tpControle.Size = new System.Drawing.Size(876, 360);
             this.tpControle.TabIndex = 0;
             this.tpControle.Text = "Controle";
             this.tpControle.UseVisualStyleBackColor = true;
@@ -179,8 +186,8 @@
             // scControle.Panel2
             // 
             this.scControle.Panel2.Controls.Add(this.scControleSub);
-            this.scControle.Size = new System.Drawing.Size(873, 354);
-            this.scControle.SplitterDistance = 290;
+            this.scControle.Size = new System.Drawing.Size(870, 354);
+            this.scControle.SplitterDistance = 289;
             this.scControle.TabIndex = 0;
             // 
             // ssTotalizadorComodo
@@ -189,7 +196,7 @@
             this.tsslTotalComodo});
             this.ssTotalizadorComodo.Location = new System.Drawing.Point(0, 332);
             this.ssTotalizadorComodo.Name = "ssTotalizadorComodo";
-            this.ssTotalizadorComodo.Size = new System.Drawing.Size(290, 22);
+            this.ssTotalizadorComodo.Size = new System.Drawing.Size(289, 22);
             this.ssTotalizadorComodo.TabIndex = 1;
             this.ssTotalizadorComodo.Text = "statusStrip1";
             // 
@@ -204,8 +211,8 @@
             // 
             this.dgvConComodos.AllowUserToAddRows = false;
             this.dgvConComodos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvConComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvConComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConComodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConComodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodoCon,
@@ -215,7 +222,7 @@
             this.dgvConComodos.Name = "dgvConComodos";
             this.dgvConComodos.ReadOnly = true;
             this.dgvConComodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConComodos.Size = new System.Drawing.Size(290, 354);
+            this.dgvConComodos.Size = new System.Drawing.Size(289, 354);
             this.dgvConComodos.TabIndex = 0;
             this.dgvConComodos.SelectionChanged += new System.EventHandler(this.dgvConComodos_SelectionChanged);
             // 
@@ -250,14 +257,14 @@
             // 
             this.scControleSub.Panel2.Controls.Add(this.ssTotalizador);
             this.scControleSub.Panel2.Controls.Add(this.dgvProdutosAtividades);
-            this.scControleSub.Size = new System.Drawing.Size(579, 354);
+            this.scControleSub.Size = new System.Drawing.Size(577, 354);
             this.scControleSub.SplitterDistance = 125;
             this.scControleSub.TabIndex = 0;
             // 
             // dgvConAtividades
             // 
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvConAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvConAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvConAtividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConAtividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodoAtividade,
@@ -268,7 +275,7 @@
             this.dgvConAtividades.Location = new System.Drawing.Point(0, 0);
             this.dgvConAtividades.Name = "dgvConAtividades";
             this.dgvConAtividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConAtividades.Size = new System.Drawing.Size(579, 125);
+            this.dgvConAtividades.Size = new System.Drawing.Size(577, 125);
             this.dgvConAtividades.TabIndex = 0;
             this.dgvConAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvConAtividades_EditingControlShowing);
             this.dgvConAtividades.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConAtividades_RowValidated);
@@ -304,8 +311,8 @@
             // vlAtividadeComodo
             // 
             this.vlAtividadeComodo.DataPropertyName = "vlAtividade";
-            dataGridViewCellStyle15.Format = "C2";
-            this.vlAtividadeComodo.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Format = "C2";
+            this.vlAtividadeComodo.DefaultCellStyle = dataGridViewCellStyle3;
             this.vlAtividadeComodo.HeaderText = "Valor";
             this.vlAtividadeComodo.Name = "vlAtividadeComodo";
             this.vlAtividadeComodo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -317,7 +324,7 @@
             this.tsslTotalAtividade});
             this.ssTotalizador.Location = new System.Drawing.Point(0, 203);
             this.ssTotalizador.Name = "ssTotalizador";
-            this.ssTotalizador.Size = new System.Drawing.Size(579, 22);
+            this.ssTotalizador.Size = new System.Drawing.Size(577, 22);
             this.ssTotalizador.TabIndex = 1;
             // 
             // tsslTotalAtividade
@@ -329,8 +336,8 @@
             // 
             // dgvProdutosAtividades
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutosAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutosAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProdutosAtividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutosAtividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodoAtividadeProduto,
@@ -344,7 +351,7 @@
             this.dgvProdutosAtividades.Location = new System.Drawing.Point(0, 0);
             this.dgvProdutosAtividades.Name = "dgvProdutosAtividades";
             this.dgvProdutosAtividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutosAtividades.Size = new System.Drawing.Size(579, 225);
+            this.dgvProdutosAtividades.Size = new System.Drawing.Size(577, 225);
             this.dgvProdutosAtividades.TabIndex = 0;
             this.dgvProdutosAtividades.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutosAtividades_CellLeave);
             this.dgvProdutosAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvProdutosAtividades_EditingControlShowing);
@@ -376,8 +383,8 @@
             // vlProdutoAtividade
             // 
             this.vlProdutoAtividade.DataPropertyName = "vlProduto";
-            dataGridViewCellStyle17.Format = "C2";
-            this.vlProdutoAtividade.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Format = "C2";
+            this.vlProdutoAtividade.DefaultCellStyle = dataGridViewCellStyle5;
             this.vlProdutoAtividade.HeaderText = "Valor";
             this.vlProdutoAtividade.Name = "vlProdutoAtividade";
             this.vlProdutoAtividade.Width = 80;
@@ -400,8 +407,8 @@
             // vlTotal
             // 
             this.vlTotal.DataPropertyName = "vlTotal";
-            dataGridViewCellStyle18.Format = "C2";
-            this.vlTotal.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Format = "C2";
+            this.vlTotal.DefaultCellStyle = dataGridViewCellStyle6;
             this.vlTotal.HeaderText = "Total";
             this.vlTotal.Name = "vlTotal";
             this.vlTotal.ReadOnly = true;
@@ -413,7 +420,7 @@
             this.tpCadastros.Location = new System.Drawing.Point(4, 22);
             this.tpCadastros.Name = "tpCadastros";
             this.tpCadastros.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCadastros.Size = new System.Drawing.Size(879, 360);
+            this.tpCadastros.Size = new System.Drawing.Size(876, 360);
             this.tpCadastros.TabIndex = 1;
             this.tpCadastros.Text = "Cadastros";
             this.tpCadastros.UseVisualStyleBackColor = true;
@@ -432,7 +439,7 @@
             // scCadastros.Panel2
             // 
             this.scCadastros.Panel2.Controls.Add(this.scInferior);
-            this.scCadastros.Size = new System.Drawing.Size(873, 354);
+            this.scCadastros.Size = new System.Drawing.Size(870, 354);
             this.scCadastros.SplitterDistance = 128;
             this.scCadastros.TabIndex = 4;
             // 
@@ -449,15 +456,15 @@
             // scSuperior.Panel2
             // 
             this.scSuperior.Panel2.Controls.Add(this.dgvProdutos);
-            this.scSuperior.Size = new System.Drawing.Size(873, 128);
-            this.scSuperior.SplitterDistance = 229;
+            this.scSuperior.Size = new System.Drawing.Size(870, 128);
+            this.scSuperior.SplitterDistance = 228;
             this.scSuperior.TabIndex = 0;
             // 
             // dgvComodos
             // 
             this.dgvComodos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvComodos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvComodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdComodo,
@@ -467,7 +474,7 @@
             this.dgvComodos.MultiSelect = false;
             this.dgvComodos.Name = "dgvComodos";
             this.dgvComodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComodos.Size = new System.Drawing.Size(229, 128);
+            this.dgvComodos.Size = new System.Drawing.Size(228, 128);
             this.dgvComodos.TabIndex = 1;
             // 
             // cdComodo
@@ -487,8 +494,8 @@
             // dgvProdutos
             // 
             this.dgvProdutos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdProduto,
@@ -500,7 +507,7 @@
             this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(640, 128);
+            this.dgvProdutos.Size = new System.Drawing.Size(638, 128);
             this.dgvProdutos.TabIndex = 1;
             // 
             // cdProduto
@@ -520,8 +527,8 @@
             // vlProduto
             // 
             this.vlProduto.DataPropertyName = "vlProduto";
-            dataGridViewCellStyle21.Format = "C2";
-            this.vlProduto.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Format = "C2";
+            this.vlProduto.DefaultCellStyle = dataGridViewCellStyle9;
             this.vlProduto.HeaderText = "Valor";
             this.vlProduto.Name = "vlProduto";
             // 
@@ -556,15 +563,15 @@
             // scInferior.Panel2
             // 
             this.scInferior.Panel2.Controls.Add(this.dgvProdutosSugeridos);
-            this.scInferior.Size = new System.Drawing.Size(873, 222);
+            this.scInferior.Size = new System.Drawing.Size(870, 222);
             this.scInferior.SplitterDistance = 112;
             this.scInferior.TabIndex = 0;
             // 
             // dgvAtividades
             // 
             this.dgvAtividades.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvAtividades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAtividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdAtividade,
@@ -575,7 +582,7 @@
             this.dgvAtividades.MultiSelect = false;
             this.dgvAtividades.Name = "dgvAtividades";
             this.dgvAtividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAtividades.Size = new System.Drawing.Size(873, 112);
+            this.dgvAtividades.Size = new System.Drawing.Size(870, 112);
             this.dgvAtividades.TabIndex = 1;
             this.dgvAtividades.Leave += new System.EventHandler(this.dgvAtividades_Leave);
             // 
@@ -597,16 +604,16 @@
             // vlAtividadeOrcado
             // 
             this.vlAtividadeOrcado.DataPropertyName = "vlAtividade";
-            dataGridViewCellStyle23.Format = "C2";
-            this.vlAtividadeOrcado.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Format = "C2";
+            this.vlAtividadeOrcado.DefaultCellStyle = dataGridViewCellStyle11;
             this.vlAtividadeOrcado.FillWeight = 228.4264F;
             this.vlAtividadeOrcado.HeaderText = "Valor";
             this.vlAtividadeOrcado.Name = "vlAtividadeOrcado";
             // 
             // dgvProdutosSugeridos
             // 
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvProdutosSugeridos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvProdutosSugeridos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProdutosSugeridos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutosSugeridos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdProdAtividadeSug,
@@ -616,7 +623,7 @@
             this.dgvProdutosSugeridos.MultiSelect = false;
             this.dgvProdutosSugeridos.Name = "dgvProdutosSugeridos";
             this.dgvProdutosSugeridos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutosSugeridos.Size = new System.Drawing.Size(873, 106);
+            this.dgvProdutosSugeridos.Size = new System.Drawing.Size(870, 106);
             this.dgvProdutosSugeridos.TabIndex = 1;
             // 
             // cdProdAtividadeSug
@@ -644,11 +651,12 @@
             this.tsmiSalvar,
             this.tsmiFechar,
             this.tstbStatus,
+            this.tstbImportacao,
             this.tstbTotalObra,
             this.tstbBaseDados});
             this.msControle.Location = new System.Drawing.Point(0, 386);
             this.msControle.Name = "msControle";
-            this.msControle.Size = new System.Drawing.Size(887, 24);
+            this.msControle.Size = new System.Drawing.Size(884, 24);
             this.msControle.TabIndex = 1;
             this.msControle.Text = "msControle";
             // 
@@ -666,17 +674,17 @@
             this.tsmiFechar.Text = "Fechar";
             this.tsmiFechar.Click += new System.EventHandler(this.tsmiFechar_Click);
             // 
-            // tstbStatus
+            // tstbImportacao
             // 
-            this.tstbStatus.BackColor = System.Drawing.SystemColors.Window;
-            this.tstbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tstbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tstbStatus.ForeColor = System.Drawing.Color.Green;
-            this.tstbStatus.Name = "tstbStatus";
-            this.tstbStatus.Size = new System.Drawing.Size(110, 20);
-            this.tstbStatus.Text = "REGISTRO SALVO ";
-            this.tstbStatus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tstbStatus.Visible = false;
+            this.tstbImportacao.BackColor = System.Drawing.SystemColors.Window;
+            this.tstbImportacao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tstbImportacao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tstbImportacao.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tstbImportacao.Name = "tstbImportacao";
+            this.tstbImportacao.Size = new System.Drawing.Size(160, 20);
+            this.tstbImportacao.Text = "IMPORTAÇÃO CONCLUÍDA";
+            this.tstbImportacao.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tstbImportacao.Visible = false;
             // 
             // tstbTotalObra
             // 
@@ -695,7 +703,8 @@
             this.tstbBaseDados.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tstbBaseDados.Font = new System.Drawing.Font("Segoe UI", 7F);
             this.tstbBaseDados.Name = "tstbBaseDados";
-            this.tstbBaseDados.Size = new System.Drawing.Size(200, 20);
+            this.tstbBaseDados.ReadOnly = true;
+            this.tstbBaseDados.Size = new System.Drawing.Size(250, 20);
             this.tstbBaseDados.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // bsAtividades
@@ -710,33 +719,6 @@
             // dsPrincipal
             // 
             this.dsPrincipal.DataSetName = "dsPrincipal";
-            this.dsPrincipal.Tables.AddRange(new System.Data.DataTable[] {
-            this.dtComodos});
-            // 
-            // dtComodos
-            // 
-            this.dtComodos.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dcCdComodo,
-            this.dcNmComodo});
-            this.dtComodos.Constraints.AddRange(new System.Data.Constraint[] {
-            new System.Data.UniqueConstraint("Constraint1", new string[] {
-                        "cdComodo"}, true)});
-            this.dtComodos.PrimaryKey = new System.Data.DataColumn[] {
-        this.dcCdComodo};
-            this.dtComodos.TableName = "cobComodos";
-            // 
-            // dcCdComodo
-            // 
-            this.dcCdComodo.AllowDBNull = false;
-            this.dcCdComodo.AutoIncrement = true;
-            this.dcCdComodo.Caption = "Cômodo";
-            this.dcCdComodo.ColumnName = "cdComodo";
-            this.dcCdComodo.DataType = typeof(int);
-            // 
-            // dcNmComodo
-            // 
-            this.dcNmComodo.Caption = "Nome";
-            this.dcNmComodo.ColumnName = "nmComodo";
             // 
             // tmStatus
             // 
@@ -756,11 +738,88 @@
             // 
             this.bsConProdutosAtividade.DataMember = "ProdutosAtividadesComodo";
             // 
+            // cmsFuncoes
+            // 
+            this.cmsFuncoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiImportarComodos,
+            this.tsmiImportarProdutos,
+            this.tsmiImportarAtividades});
+            this.cmsFuncoes.Name = "cmsFuncoes";
+            this.cmsFuncoes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.cmsFuncoes.Size = new System.Drawing.Size(177, 70);
+            // 
+            // tsmiImportarComodos
+            // 
+            this.tsmiImportarComodos.Name = "tsmiImportarComodos";
+            this.tsmiImportarComodos.Size = new System.Drawing.Size(176, 22);
+            this.tsmiImportarComodos.Text = "Importar cômodos";
+            this.tsmiImportarComodos.Click += new System.EventHandler(this.tsmiImportarComodos_Click);
+            // 
+            // tsmiImportarProdutos
+            // 
+            this.tsmiImportarProdutos.Name = "tsmiImportarProdutos";
+            this.tsmiImportarProdutos.Size = new System.Drawing.Size(176, 22);
+            this.tsmiImportarProdutos.Text = "Importar produtos";
+            this.tsmiImportarProdutos.Click += new System.EventHandler(this.tsmiImportarProdutos_Click);
+            // 
+            // tsmiImportarAtividades
+            // 
+            this.tsmiImportarAtividades.Name = "tsmiImportarAtividades";
+            this.tsmiImportarAtividades.Size = new System.Drawing.Size(176, 22);
+            this.tsmiImportarAtividades.Text = "Importar atividades";
+            this.tsmiImportarAtividades.Click += new System.EventHandler(this.tsmiImportarAtividades_Click);
+            // 
+            // pnProcessamento
+            // 
+            this.pnProcessamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnProcessamento.BackColor = System.Drawing.Color.White;
+            this.pnProcessamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnProcessamento.Controls.Add(this.pbProgresso);
+            this.pnProcessamento.Controls.Add(this.lbMensagemProcessamento);
+            this.pnProcessamento.Location = new System.Drawing.Point(250, 76);
+            this.pnProcessamento.Name = "pnProcessamento";
+            this.pnProcessamento.Size = new System.Drawing.Size(400, 88);
+            this.pnProcessamento.TabIndex = 4;
+            this.pnProcessamento.Visible = false;
+            // 
+            // pbProgresso
+            // 
+            this.pbProgresso.Location = new System.Drawing.Point(3, 58);
+            this.pbProgresso.Name = "pbProgresso";
+            this.pbProgresso.Size = new System.Drawing.Size(392, 23);
+            this.pbProgresso.TabIndex = 3;
+            // 
+            // lbMensagemProcessamento
+            // 
+            this.lbMensagemProcessamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMensagemProcessamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensagemProcessamento.Location = new System.Drawing.Point(3, 0);
+            this.lbMensagemProcessamento.Name = "lbMensagemProcessamento";
+            this.lbMensagemProcessamento.Size = new System.Drawing.Size(392, 55);
+            this.lbMensagemProcessamento.TabIndex = 2;
+            this.lbMensagemProcessamento.Text = "Importando registros...";
+            this.lbMensagemProcessamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tstbStatus
+            // 
+            this.tstbStatus.BackColor = System.Drawing.SystemColors.Window;
+            this.tstbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tstbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tstbStatus.ForeColor = System.Drawing.Color.Green;
+            this.tstbStatus.Name = "tstbStatus";
+            this.tstbStatus.Size = new System.Drawing.Size(110, 20);
+            this.tstbStatus.Text = "REGISTRO SALVO ";
+            this.tstbStatus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tstbStatus.Visible = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 410);
+            this.ClientSize = new System.Drawing.Size(884, 410);
+            this.ContextMenuStrip = this.cmsFuncoes;
+            this.Controls.Add(this.pnProcessamento);
             this.Controls.Add(this.tcPrincipal);
             this.Controls.Add(this.msControle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -810,10 +869,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsAtividades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProdutosSugeridos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtComodos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConComodos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConAtividadesComodo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConProdutosAtividade)).EndInit();
+            this.cmsFuncoes.ResumeLayout(false);
+            this.pnProcessamento.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -849,12 +909,9 @@
         private System.Windows.Forms.BindingSource bsAtividades;
         private System.Windows.Forms.BindingSource bsProdutosSugeridos;
         private System.Data.DataSet dsPrincipal;
-        private System.Data.DataTable dtComodos;
-        private System.Data.DataColumn dcCdComodo;
-        private System.Data.DataColumn dcNmComodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cdComodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nmComodo;
-        private System.Windows.Forms.ToolStripTextBox tstbStatus;
+        private System.Windows.Forms.ToolStripTextBox tstbImportacao;
         private System.Windows.Forms.Timer tmStatus;
         private System.Windows.Forms.BindingSource bsConComodos;
         private System.Windows.Forms.BindingSource bsConAtividadesComodo;
@@ -880,6 +937,15 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ckbContabilizaAtividade;
         private System.Windows.Forms.DataGridViewComboBoxColumn cdAtividadeComodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlAtividadeComodo;
+        private System.Windows.Forms.ContextMenuStrip cmsFuncoes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImportarComodos;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImportarProdutos;
+        private System.Windows.Forms.ToolStripMenuItem tsmiImportarAtividades;
+        private System.Windows.Forms.Panel pnProcessamento;
+        private System.Windows.Forms.ProgressBar pbProgresso;
+        private System.Windows.Forms.Label lbMensagemProcessamento;
+        private System.Windows.Forms.OpenFileDialog ofdArquivo;
+        private System.Windows.Forms.ToolStripTextBox tstbStatus;
     }
 }
 
