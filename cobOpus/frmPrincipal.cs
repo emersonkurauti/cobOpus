@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using cobOpus.Classes;
+using cobOpus.Componentes;
 
 namespace cobOpus
 {
@@ -104,7 +105,7 @@ namespace cobOpus
         private void tsmiSalvar_Click(object sender, EventArgs e)
         {
             oControleDados.SalvarDataTables();
-            tstbImportacao.Visible = true;
+            tstbStatus.Visible = true;
             tmStatus.Start();
         }
 
@@ -612,6 +613,17 @@ namespace cobOpus
         {
             pnProcessamento.Left = (this.Width / 2) - (pnProcessamento.Width / 2);
             pnProcessamento.Top = (this.Height / 2) - (pnProcessamento.Height / 2);
+        }
+
+        private void ucGerenciadorRelatorios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            csGerenciadorRelatorios oGerenciadorRel = new csGerenciadorRelatorios();
+            oGerenciadorRel.nTipoRelatorio = ucRelatorios.nTipoRelatorio;
+            oGerenciadorRel.oControleDados = oControleDados;
+            oGerenciadorRel.GerarDados();
+            ucRelatorios.sXValueMember = oGerenciadorRel.sXValueMember;
+            ucRelatorios.sYValueMembers = oGerenciadorRel.sYValueMembers;
+            ucRelatorios.dtDados = oGerenciadorRel.dtDados;
         }
     }
 }

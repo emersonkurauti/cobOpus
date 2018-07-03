@@ -85,19 +85,17 @@
             this.dgvProdutosSugeridos = new System.Windows.Forms.DataGridView();
             this.cdProdAtividadeSug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nmProdutoAtiv = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ucRelatorios = new cobOpus.Componentes.ucGerenciadorRelatorios();
             this.msControle = new System.Windows.Forms.MenuStrip();
             this.tsmiSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFechar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tstbStatus = new System.Windows.Forms.ToolStripTextBox();
             this.tstbImportacao = new System.Windows.Forms.ToolStripTextBox();
             this.tstbTotalObra = new System.Windows.Forms.ToolStripTextBox();
             this.tstbBaseDados = new System.Windows.Forms.ToolStripTextBox();
-            this.bsAtividades = new System.Windows.Forms.BindingSource(this.components);
-            this.bsProdutosSugeridos = new System.Windows.Forms.BindingSource(this.components);
             this.dsPrincipal = new System.Data.DataSet();
             this.tmStatus = new System.Windows.Forms.Timer(this.components);
-            this.bsConComodos = new System.Windows.Forms.BindingSource(this.components);
-            this.bsConAtividadesComodo = new System.Windows.Forms.BindingSource(this.components);
-            this.bsConProdutosAtividade = new System.Windows.Forms.BindingSource(this.components);
             this.cmsFuncoes = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiImportarComodos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiImportarProdutos = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +104,11 @@
             this.pbProgresso = new System.Windows.Forms.ProgressBar();
             this.lbMensagemProcessamento = new System.Windows.Forms.Label();
             this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
-            this.tstbStatus = new System.Windows.Forms.ToolStripTextBox();
+            this.bsAtividades = new System.Windows.Forms.BindingSource(this.components);
+            this.bsProdutosSugeridos = new System.Windows.Forms.BindingSource(this.components);
+            this.bsConComodos = new System.Windows.Forms.BindingSource(this.components);
+            this.bsConAtividadesComodo = new System.Windows.Forms.BindingSource(this.components);
+            this.bsConProdutosAtividade = new System.Windows.Forms.BindingSource(this.components);
             this.tcPrincipal.SuspendLayout();
             this.tpControle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scControle)).BeginInit();
@@ -139,21 +141,23 @@
             this.scInferior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtividades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosSugeridos)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.msControle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
+            this.cmsFuncoes.SuspendLayout();
+            this.pnProcessamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsAtividades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProdutosSugeridos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConComodos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConAtividadesComodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConProdutosAtividade)).BeginInit();
-            this.cmsFuncoes.SuspendLayout();
-            this.pnProcessamento.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPrincipal
             // 
             this.tcPrincipal.Controls.Add(this.tpControle);
             this.tcPrincipal.Controls.Add(this.tpCadastros);
+            this.tcPrincipal.Controls.Add(this.tabPage1);
             this.tcPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tcPrincipal.Name = "tcPrincipal";
@@ -644,6 +648,26 @@
             this.nmProdutoAtiv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.nmProdutoAtiv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.ucRelatorios);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(876, 360);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Relatórios";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // ucRelatorios
+            // 
+            this.ucRelatorios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucRelatorios.Location = new System.Drawing.Point(3, 3);
+            this.ucRelatorios.Name = "ucRelatorios";
+            this.ucRelatorios.Size = new System.Drawing.Size(870, 354);
+            this.ucRelatorios.TabIndex = 0;
+            this.ucRelatorios.SelectedIndexChanged += new cobOpus.Componentes.ucGerenciadorRelatorios.OnSelectedIndexChanged(this.ucGerenciadorRelatorios_SelectedIndexChanged);
+            // 
             // msControle
             // 
             this.msControle.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -673,6 +697,18 @@
             this.tsmiFechar.Size = new System.Drawing.Size(54, 20);
             this.tsmiFechar.Text = "Fechar";
             this.tsmiFechar.Click += new System.EventHandler(this.tsmiFechar_Click);
+            // 
+            // tstbStatus
+            // 
+            this.tstbStatus.BackColor = System.Drawing.SystemColors.Window;
+            this.tstbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tstbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tstbStatus.ForeColor = System.Drawing.Color.Green;
+            this.tstbStatus.Name = "tstbStatus";
+            this.tstbStatus.Size = new System.Drawing.Size(110, 20);
+            this.tstbStatus.Text = "REGISTRO SALVO ";
+            this.tstbStatus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tstbStatus.Visible = false;
             // 
             // tstbImportacao
             // 
@@ -707,15 +743,6 @@
             this.tstbBaseDados.Size = new System.Drawing.Size(250, 20);
             this.tstbBaseDados.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // bsAtividades
-            // 
-            this.bsAtividades.DataMember = "dtAtividades";
-            // 
-            // bsProdutosSugeridos
-            // 
-            this.bsProdutosSugeridos.DataMember = "ProdutosSugeridosAtividade";
-            this.bsProdutosSugeridos.Filter = "";
-            // 
             // dsPrincipal
             // 
             this.dsPrincipal.DataSetName = "dsPrincipal";
@@ -724,19 +751,6 @@
             // 
             this.tmStatus.Interval = 2500;
             this.tmStatus.Tick += new System.EventHandler(this.tmStatus_Tick);
-            // 
-            // bsConComodos
-            // 
-            this.bsConComodos.DataMember = "dtComodos";
-            this.bsConComodos.Sort = "";
-            // 
-            // bsConAtividadesComodo
-            // 
-            this.bsConAtividadesComodo.DataMember = "AtividadesComodo";
-            // 
-            // bsConProdutosAtividade
-            // 
-            this.bsConProdutosAtividade.DataMember = "ProdutosAtividadesComodo";
             // 
             // cmsFuncoes
             // 
@@ -801,17 +815,27 @@
             this.lbMensagemProcessamento.Text = "Importando registros...";
             this.lbMensagemProcessamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tstbStatus
+            // bsAtividades
             // 
-            this.tstbStatus.BackColor = System.Drawing.SystemColors.Window;
-            this.tstbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tstbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tstbStatus.ForeColor = System.Drawing.Color.Green;
-            this.tstbStatus.Name = "tstbStatus";
-            this.tstbStatus.Size = new System.Drawing.Size(110, 20);
-            this.tstbStatus.Text = "REGISTRO SALVO ";
-            this.tstbStatus.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tstbStatus.Visible = false;
+            this.bsAtividades.DataMember = "dtAtividades";
+            // 
+            // bsProdutosSugeridos
+            // 
+            this.bsProdutosSugeridos.DataMember = "ProdutosSugeridosAtividade";
+            this.bsProdutosSugeridos.Filter = "";
+            // 
+            // bsConComodos
+            // 
+            this.bsConComodos.DataMember = "dtComodos";
+            this.bsConComodos.Sort = "";
+            // 
+            // bsConAtividadesComodo
+            // 
+            this.bsConAtividadesComodo.DataMember = "AtividadesComodo";
+            // 
+            // bsConProdutosAtividade
+            // 
+            this.bsConProdutosAtividade.DataMember = "ProdutosAtividadesComodo";
             // 
             // frmPrincipal
             // 
@@ -819,8 +843,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 410);
             this.ContextMenuStrip = this.cmsFuncoes;
-            this.Controls.Add(this.pnProcessamento);
             this.Controls.Add(this.tcPrincipal);
+            this.Controls.Add(this.pnProcessamento);
             this.Controls.Add(this.msControle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
@@ -864,16 +888,17 @@
             this.scInferior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtividades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosSugeridos)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             this.msControle.ResumeLayout(false);
             this.msControle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
+            this.cmsFuncoes.ResumeLayout(false);
+            this.pnProcessamento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsAtividades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProdutosSugeridos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConComodos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConAtividadesComodo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsConProdutosAtividade)).EndInit();
-            this.cmsFuncoes.ResumeLayout(false);
-            this.pnProcessamento.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -946,6 +971,8 @@
         private System.Windows.Forms.Label lbMensagemProcessamento;
         private System.Windows.Forms.OpenFileDialog ofdArquivo;
         private System.Windows.Forms.ToolStripTextBox tstbStatus;
+        private System.Windows.Forms.TabPage tabPage1;
+        private Componentes.ucGerenciadorRelatorios ucRelatorios;
     }
 }
 
