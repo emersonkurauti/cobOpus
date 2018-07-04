@@ -35,6 +35,7 @@ namespace cobOpus
         {
             CarregarRelacionamentos();
             tstbBaseDados.Text = csFuncoes.sCaminho;
+            dgvConComodos.Focus();
         }
 
         private void CarregarRelacionamentos()
@@ -624,6 +625,22 @@ namespace cobOpus
             ucRelatorios.sXValueMember = oGerenciadorRel.sXValueMember;
             ucRelatorios.sYValueMembers = oGerenciadorRel.sYValueMembers;
             ucRelatorios.dtDados = oGerenciadorRel.dtDados;
+        }
+
+        private void dgvConComodos_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                dgvConAtividades.Focus();
+            }
+        }
+
+        private void dgvConAtividades_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                dgvConComodos.Focus();
+            }
         }
     }
 }

@@ -86,7 +86,6 @@
             this.cdProdAtividadeSug = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nmProdutoAtiv = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ucRelatorios = new cobOpus.Componentes.ucGerenciadorRelatorios();
             this.msControle = new System.Windows.Forms.MenuStrip();
             this.tsmiSalvar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFechar = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,6 +108,7 @@
             this.bsConComodos = new System.Windows.Forms.BindingSource(this.components);
             this.bsConAtividadesComodo = new System.Windows.Forms.BindingSource(this.components);
             this.bsConProdutosAtividade = new System.Windows.Forms.BindingSource(this.components);
+            this.ucRelatorios = new cobOpus.Componentes.ucGerenciadorRelatorios();
             this.tcPrincipal.SuspendLayout();
             this.tpControle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scControle)).BeginInit();
@@ -229,6 +229,7 @@
             this.dgvConComodos.Size = new System.Drawing.Size(289, 354);
             this.dgvConComodos.TabIndex = 0;
             this.dgvConComodos.SelectionChanged += new System.EventHandler(this.dgvConComodos_SelectionChanged);
+            this.dgvConComodos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvConComodos_KeyUp);
             // 
             // cdComodoCon
             // 
@@ -284,6 +285,7 @@
             this.dgvConAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvConAtividades_EditingControlShowing);
             this.dgvConAtividades.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConAtividades_RowValidated);
             this.dgvConAtividades.SelectionChanged += new System.EventHandler(this.dgvConAtividades_SelectionChanged);
+            this.dgvConAtividades.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvConAtividades_KeyUp);
             // 
             // cdComodoAtividade
             // 
@@ -659,15 +661,6 @@
             this.tabPage1.Text = "Relatórios";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ucRelatorios
-            // 
-            this.ucRelatorios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucRelatorios.Location = new System.Drawing.Point(3, 3);
-            this.ucRelatorios.Name = "ucRelatorios";
-            this.ucRelatorios.Size = new System.Drawing.Size(870, 354);
-            this.ucRelatorios.TabIndex = 0;
-            this.ucRelatorios.SelectedIndexChanged += new cobOpus.Componentes.ucGerenciadorRelatorios.OnSelectedIndexChanged(this.ucGerenciadorRelatorios_SelectedIndexChanged);
-            // 
             // msControle
             // 
             this.msControle.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -687,6 +680,8 @@
             // tsmiSalvar
             // 
             this.tsmiSalvar.Name = "tsmiSalvar";
+            this.tsmiSalvar.ShortcutKeyDisplayString = "Ctrl+S";
+            this.tsmiSalvar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.tsmiSalvar.Size = new System.Drawing.Size(50, 20);
             this.tsmiSalvar.Text = "Salvar";
             this.tsmiSalvar.Click += new System.EventHandler(this.tsmiSalvar_Click);
@@ -836,6 +831,15 @@
             // bsConProdutosAtividade
             // 
             this.bsConProdutosAtividade.DataMember = "ProdutosAtividadesComodo";
+            // 
+            // ucRelatorios
+            // 
+            this.ucRelatorios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucRelatorios.Location = new System.Drawing.Point(3, 3);
+            this.ucRelatorios.Name = "ucRelatorios";
+            this.ucRelatorios.Size = new System.Drawing.Size(870, 354);
+            this.ucRelatorios.TabIndex = 0;
+            this.ucRelatorios.SelectedIndexChanged += new cobOpus.Componentes.ucGerenciadorRelatorios.OnSelectedIndexChanged(this.ucGerenciadorRelatorios_SelectedIndexChanged);
             // 
             // frmPrincipal
             // 
