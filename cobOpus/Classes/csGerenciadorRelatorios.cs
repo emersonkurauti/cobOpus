@@ -62,6 +62,8 @@ namespace cobOpus.Classes
                 dtDados.Columns.Add("nmProduto", typeof(string));
                 dtDados.Columns.Add("vlTotal", typeof(double));
 
+                oControleDados.oProdutos.RetornarRelatorioTotalProdutos(ref dtDados, oControleDados);
+
                 if (dtDados.Rows.Count == 0)
                     dtDados = null;
 

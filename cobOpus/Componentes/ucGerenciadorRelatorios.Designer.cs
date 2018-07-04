@@ -34,9 +34,9 @@
             this.scRlatorios = new System.Windows.Forms.SplitContainer();
             this.lsAvancados = new System.Windows.Forms.ListBox();
             this.tcResultado = new System.Windows.Forms.TabControl();
-            this.tpRelatorio = new System.Windows.Forms.TabPage();
             this.tpGrafico = new System.Windows.Forms.TabPage();
             this.cGrafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tpRelatorio = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.scRlatorios)).BeginInit();
             this.scRlatorios.Panel1.SuspendLayout();
             this.scRlatorios.Panel2.SuspendLayout();
@@ -91,16 +91,6 @@
             this.tcResultado.Size = new System.Drawing.Size(531, 433);
             this.tcResultado.TabIndex = 0;
             // 
-            // tpRelatorio
-            // 
-            this.tpRelatorio.Location = new System.Drawing.Point(4, 22);
-            this.tpRelatorio.Name = "tpRelatorio";
-            this.tpRelatorio.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRelatorio.Size = new System.Drawing.Size(523, 407);
-            this.tpRelatorio.TabIndex = 0;
-            this.tpRelatorio.Text = "Relatório";
-            this.tpRelatorio.UseVisualStyleBackColor = true;
-            // 
             // tpGrafico
             // 
             this.tpGrafico.Controls.Add(this.cGrafico);
@@ -116,13 +106,15 @@
             // 
             chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelAutoFitMinFontSize = 5;
             chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
             chartArea1.AxisX.LineWidth = 10;
             chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
             chartArea1.AxisX2.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
             chartArea1.AxisY.LabelStyle.Format = "C2";
+            chartArea1.AxisY.MajorGrid.Enabled = false;
             chartArea1.Name = "ChartArea";
             this.cGrafico.ChartAreas.Add(chartArea1);
             this.cGrafico.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -144,6 +136,16 @@
             this.cGrafico.Size = new System.Drawing.Size(517, 401);
             this.cGrafico.TabIndex = 1;
             this.cGrafico.Visible = false;
+            // 
+            // tpRelatorio
+            // 
+            this.tpRelatorio.Location = new System.Drawing.Point(4, 22);
+            this.tpRelatorio.Name = "tpRelatorio";
+            this.tpRelatorio.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRelatorio.Size = new System.Drawing.Size(523, 407);
+            this.tpRelatorio.TabIndex = 0;
+            this.tpRelatorio.Text = "Relatório";
+            this.tpRelatorio.UseVisualStyleBackColor = true;
             // 
             // ucGerenciadorRelatorios
             // 
