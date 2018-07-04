@@ -30,6 +30,8 @@ namespace cobOpus.Classes
                 dtDados.Columns.Add("deAtividade", typeof(string));
                 dtDados.Columns.Add("vlTotal", typeof(double));
 
+                oControleDados.oAtividades.RetornarRelatorioTotalAtividades(ref dtDados, oControleDados); 
+
                 if (dtDados.Rows.Count == 0)
                     dtDados = null;
 
