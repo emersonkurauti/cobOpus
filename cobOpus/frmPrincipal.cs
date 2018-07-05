@@ -35,6 +35,7 @@ namespace cobOpus
         {
             CarregarRelacionamentos();
             tstbBaseDados.Text = csFuncoes.sCaminho;
+            dgvConAtividades.Focus();
             dgvConComodos.Focus();
         }
 
@@ -640,6 +641,33 @@ namespace cobOpus
             if (e.KeyCode == Keys.Left)
             {
                 dgvConComodos.Focus();
+            }
+        }
+
+        private void dgvProdutosAtividades_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+            {
+                dgvConComodos.Focus();
+            }
+        }
+
+        private void AtivarFoco(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            dgv.DefaultCellStyle.SelectionBackColor = SystemColors.Highlight;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+        }
+
+        private void DesativarFoco(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgv.DefaultCellStyle.SelectionBackColor = SystemColors.ControlLight;
+
+            if (dgv.SelectedRows[0].Index % 2 == 0)
+            {
+                dgv.DefaultCellStyle.SelectionBackColor = Color.White;
             }
         }
     }

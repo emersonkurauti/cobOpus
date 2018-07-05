@@ -229,7 +229,9 @@
             this.dgvConComodos.Size = new System.Drawing.Size(289, 354);
             this.dgvConComodos.TabIndex = 0;
             this.dgvConComodos.SelectionChanged += new System.EventHandler(this.dgvConComodos_SelectionChanged);
+            this.dgvConComodos.Enter += new System.EventHandler(this.AtivarFoco);
             this.dgvConComodos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvConComodos_KeyUp);
+            this.dgvConComodos.Leave += new System.EventHandler(this.DesativarFoco);
             // 
             // cdComodoCon
             // 
@@ -285,7 +287,9 @@
             this.dgvConAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvConAtividades_EditingControlShowing);
             this.dgvConAtividades.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConAtividades_RowValidated);
             this.dgvConAtividades.SelectionChanged += new System.EventHandler(this.dgvConAtividades_SelectionChanged);
+            this.dgvConAtividades.Enter += new System.EventHandler(this.AtivarFoco);
             this.dgvConAtividades.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvConAtividades_KeyUp);
+            this.dgvConAtividades.Leave += new System.EventHandler(this.DesativarFoco);
             // 
             // cdComodoAtividade
             // 
@@ -362,6 +366,7 @@
             this.dgvProdutosAtividades.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutosAtividades_CellLeave);
             this.dgvProdutosAtividades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvProdutosAtividades_EditingControlShowing);
             this.dgvProdutosAtividades.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutosAtividades_RowValidated);
+            this.dgvProdutosAtividades.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProdutosAtividades_KeyUp);
             // 
             // cdComodoAtividadeProduto
             // 
